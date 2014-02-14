@@ -66,14 +66,15 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 <td class="ideas1">
 <h2>Machine learning tasks</h2>
 <ul>
+
 <!-- DEEP LEARNING PROJECT IDEA -->
 <li>
 <h4 id="deep_learning">Essential Deep Learning Modules</h4>
 <!-- Project generics -->
 <i>Mentor: Theofanis Karaletsos</i><br />
 <i>Shogun co-mentor: Sergey Lisitsyn</i><br />
-<i>Difficulty: <span class="medium">Medium<span></span></span></i><br />
-<i>Requirements: C++, Python, machine learning</i><br /><br />
+<i>Difficulty: <span class="medium">Medium</span></i><br />
+<i>Requirements: C++, Python, machine learning</i><br />
 <!-- Project description -->
 <p align="justify">
 Deep Learning has recently attracted a lot of attention in the Machine Learning community for its ability to learn features that allow high performance in a variety of tasks ranging from Computer Vision to Speech Recognition and Bioinformatics. The main goal of this task is to integrate essential building blocks of deep learning algorithms into Shogun. This includes Restricted Boltzmann Machines (RBM) and training algorithms, Deep Belief Networks (DBN), feed-forward networks and convolutional networks. The architecture and software design for flexible usage and adaptation of models should be created to build a foundation for integrating many more models, evaluation methods and training algorithms in the future. Speaking of details, this idea considers implementation of some software foundation for deep learning and the first few algorithms (RBMs and training, stacking of RBM’s, wake-sleep for DBN’s, discriminative fine-tuning with backprop, FFN).<br /><br />
@@ -85,4 +86,36 @@ References:<br />
 [2] <a href="http://deeplearning.net/reading-list/">Deep learning reading list</a>.
 </p>
 </li>
-<!-- NEXT PROJECT IDEA -->
+
+<!-- VARIATIONAL LEARNING PROJECT IDEA -->
+<li>
+<h4 id="variational_learning">Variational Learning for Recommendations with Big Data</h4>
+<!-- Project generics -->
+<i>Mentor: Mohammad Emtiyaz Khan</i><br />
+<i>Shogun co-mentor: Heiko Strathmann</i><br />
+<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br />
+<i>Requirements: C++, familiarity with optimization methods, prefered (but not required) that you have basic understanding of Bayesian models (or only GPs) and variational approximations</i><br />
+<i>Useful: Matlab (for reference code), Eigen3, Shogun’s GP framework</i><br />
+<!-- Project description -->
+<p align="justify">
+The era of big data brings calls for methods that scale well. For example, websites such as Netfix and Amazon collect huge amount of data about users’ preferences. Efficient use of such data can help improve recommendations and user experience through personalization. In this project, our goal will be to develop scalable code for learning from such data.<br /><br />
+
+We will focus on models that use matrix factorization and Gaussian processes. Matrix factorization is a very popular model for recommendation systems - in fact, in the Netflix challenge, this model had the best performance obtained by any single model! We will use variational approximations since they have potential to scale well to big data. The objective function in Bayesian models are usually intractable and variational methods instead optimize a tractable lower bound to learn the model.<br /><br />
+
+Our main tool in this project will be the implementation of many convex optimization methods for fast variational inference. Previously, in other GSoCs, Jacob Walker and Roman Votjakov implemented a flexible framework for Gaussian process regression and classification models. We will use their initial work and extend the existing infrastructure to allow variational inference for GPs.<br /><br />
+
+The project time line along with estimated time and difficulty level. (Note that this is a preliminary list, which might prove to be too much.)
+<ul>
+<li>(2 week, difficult) Implement KL-method of Nickisch and Rasmussen 2008 for GPs.
+<li>(1 week, easy) Implement KL-method of Challis and Barber 2011 for GPs.
+<li>(1 week, easy) Implement the dual variational inference, Khan et. al. 2013 for GPs.
+<li>(2 weeks, difficult) Implement Stochastic method for computing inverses approximately (from Hannes’ toolbox) for GPs.
+<li>(1 weeks, easy) Generalize these methods to a general latent Gaussian model.
+<li>(1 week, easy) Implement probabilistic PCA of Tipping and Bishop 1999.
+<li>(2 week, difficult) Incorporate KL-method into PCA to learn from non-Gaussian data simliar to Matchbox 2009.
+</ul><br />
+
+You will gain experience working with optimization algorithms, and get a little peek into convex optimization theory as well. You will learn about Bayesian models such as matrix factorization and Gaussian process, and variational inference. Most fun part is that you will get to play with real-world data such as for recommendation systems. You will be able to understand why these datasets are difficult, and what kind of models are useful for them.  The project is quite flexible in terms of how much can be done and offers a lot of room for sophisticated extensions while the basic tasks are not too hard. You can play a lot with these things (and we expect you to). Should be quite fun!
+</p>
+</li>
+
