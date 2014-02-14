@@ -49,7 +49,7 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 <ul>
 <li><a href="#deep_learning">Essential Deep Learning Modules</a> </li>
 <li><a href="#variational_learning">Variational Learning for Recommendations with Big Data</a> </li>
-<li><a href="#fundamental_algorithm">Fundamental Machine Learning algorithms</a> </li>
+<li><a href="#fundamental">Fundamental Machine Learning algorithms</a> </li>
 <li><a href="#mcmc">Generic Framework for Markov Chain Monte Carlo Algorithms and Stan Interface</a> </li>
 <li><a href="#okl">Output Kernel Learning</a> </li>
 <li><a href="#variable_interactions">Testing and Measuring Variable Interactions with Kernels</a> </li>
@@ -102,20 +102,62 @@ The era of big data brings calls for methods that scale well. For example, websi
 
 We will focus on models that use matrix factorization and Gaussian processes. Matrix factorization is a very popular model for recommendation systems - in fact, in the Netflix challenge, this model had the best performance obtained by any single model! We will use variational approximations since they have potential to scale well to big data. The objective function in Bayesian models are usually intractable and variational methods instead optimize a tractable lower bound to learn the model.<br /><br />
 
-Our main tool in this project will be the implementation of many convex optimization methods for fast variational inference. Previously, in other GSoCs, Jacob Walker and Roman Votjakov implemented a flexible framework for Gaussian process regression and classification models. We will use their initial work and extend the existing infrastructure to allow variational inference for GPs.<br /><br />
+Our main tool in this project will be the implementation of many convex optimization methods for fast variational inference. Previously, in other GSoCs, Jacob Walker and Roman Votjakov implemented a flexible framework for Gaussian process regression and classification models. We will use their initial work and extend the existing infrastructure to allow variational inference for GPs.<br />
+</p>
 
 The project time line along with estimated time and difficulty level. (Note that this is a preliminary list, which might prove to be too much.)
 <ul>
-<li>(2 week, difficult) Implement KL-method of Nickisch and Rasmussen 2008 for GPs.
-<li>(1 week, easy) Implement KL-method of Challis and Barber 2011 for GPs.
-<li>(1 week, easy) Implement the dual variational inference, Khan et. al. 2013 for GPs.
-<li>(2 weeks, difficult) Implement Stochastic method for computing inverses approximately (from Hannes’ toolbox) for GPs.
-<li>(1 weeks, easy) Generalize these methods to a general latent Gaussian model.
-<li>(1 week, easy) Implement probabilistic PCA of Tipping and Bishop 1999.
-<li>(2 week, difficult) Incorporate KL-method into PCA to learn from non-Gaussian data simliar to Matchbox 2009.
-</ul><br />
+<li>(2 week, difficult) Implement KL-method of Nickisch and Rasmussen 2008 for GPs.</li>
+<li>(1 week, easy) Implement KL-method of Challis and Barber 2011 for GPs.</li>
+<li>(1 week, easy) Implement the dual variational inference, Khan et. al. 2013 for GPs.</li>
+<li>(2 weeks, difficult) Implement Stochastic method for computing inverses approximately (from Hannes’ toolbox) for GPs.</li>
+<li>(1 weeks, easy) Generalize these methods to a general latent Gaussian model.</li>
+<li>(1 week, easy) Implement probabilistic PCA of Tipping and Bishop 1999.</li>
+<li>(2 week, difficult) Incorporate KL-method into PCA to learn from non-Gaussian data simliar to Matchbox 2009.</li>
+</ul>
 
+<p align="justify">
 You will gain experience working with optimization algorithms, and get a little peek into convex optimization theory as well. You will learn about Bayesian models such as matrix factorization and Gaussian process, and variational inference. Most fun part is that you will get to play with real-world data such as for recommendation systems. You will be able to understand why these datasets are difficult, and what kind of models are useful for them.  The project is quite flexible in terms of how much can be done and offers a lot of room for sophisticated extensions while the basic tasks are not too hard. You can play a lot with these things (and we expect you to). Should be quite fun!
 </p>
 </li>
 
+<!-- FUNDAMENTAL ALGORITHMS PROJECT IDEA -->
+<li>
+<h4 id="fundamental">Fundamental Machine Learning algorithms</h4>
+<!-- Project generics -->
+<i>Mentor: Fernando Iglesias</i><br />
+<i>Difficulty: <span class="easy">Easy</span> to <span class="medium">Medium</span></i><br />
+<i>Requirements: experience with C++, Python, Octave/Matlab, understanding of basic machine learning algorithms</i><br />
+<i>Useful: experience with Eigen3</i><br />
+<!-- Project description -->
+<p align="justify">
+The machine learning research community is fast-paced, and international conferences produce new methods every year. Nevertheless, well-established, fundamental algorithms are an indispensable tool for most practitioners as they are well understood and their performance has been proven in a widen range of applications. The goal of this project is to implement fundamental ML algorithms that Shogun currently lacks, polishing and improving the existing ones, and illustrating their use through (multi-language) examples and IPython notebooks on real-life datasets.<br /><br />
+
+A first part of the project involves the implementation of decision trees in Shogun. The C4.5 algorithm [1] is a starting point -- we are also open to suggestions. Once a method to generate a decision tree is ready, use it to provide a random forests implementation [2]. <br /><br />
+
+A second part is k-nearest neighbours (kNN). For fast kNN search, there is a very efficient cover tree implementation in Shogun, which is however not easy to maintain and has problems in certain contexts. An additional task here is to implement another tree data structure for fast kNN, such as kd-trees [3], whose performance is somewhat comparable to the current cover tree implementation.<br /><br />
+
+Yet another new fundamental method we want to include in Shogun is kernel density estimation [4] (also known as Parzen windows in some domains). Such an implementation must be able to leverage the many kernels available in Shogun.<br /><br />
+
+We would also like to have a more flexible Principal Component Analysis (PCA) and Kernel PCA (KPCA) interface. For instance, we would like to give the user the possibility to choose between using Singular Value Decomposition (SVD) or eigendecomposition depending on whether the number of feature vectors is larger than the number of dimensions, or vice versa. The current implementations could be polished as well, introducing the use of Eigen3.<br /><br />
+
+Least-Angle Regression (LARS) and Lasso are two fundamental statistical tools for regression already implemented in Shogun. We would like to have a slightly large example in the form of a notebook that compares these regression techniques. This comparison would become broader including other methods implemented in Shogun such as Support Vector Regression and Gaussian Processes [5].<br /><br />
+
+A very important part of this project is to illustrate how these methods should be used using IPython notebooks and examples (at least covering C++, Python, and Octave/Matlab). The student should be able to come up with (or find in textbooks, articles, etc) good-looking -- i.e. with nice figures -- examples that illustrate the concepts underlying the implemented algorithms. A large-scale classification application with kNN is another idea.<br /><br />
+
+Suggested entrance tasks:
+<ul>
+<li><a href="https://github.com/shogun-toolbox/shogun/issues/1158">Investigate errors with LARS</a>.</li>
+<li>Get <a href="https://github.com/shogun-toolbox/shogun/pull/1110">this ID3 implementation</a> ready to be merged.</li>
+<li>Write unit tests for LARS and Lasso.</li>
+<li>Write an IPython notebook illustrating and comparing LARS and Lasso. High-dimensional data could be used to show the strength of LARS.</li>
+</ul><br />
+
+References:<br />
+[1] <a href="http://en.wikipedia.org/wiki/C4.5_algorithm">C4.5.</a><br />
+[2] <a href="http://en.wikipedia.org/wiki/Random_forests">Random forests.</a><br />
+[3] <a href="http://en.wikipedia.org/wiki/Kd_tree">KD-trees.</a><br />
+[4] <a href="http://en.wikipedia.org/wiki/Kernel_density_estimation">Kernel Density Estimation</a>.<br />
+[5] <a href="http://shogun-toolbox.org/static/notebook/current/gaussian_processes.html">GPs notebook</a>.<br />
+</p>
+</li>
