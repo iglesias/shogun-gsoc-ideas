@@ -22,13 +22,13 @@
 <td>
 <h1>Ideas for Google Summer of Code 2014 Projects</h1>
 
-Shogun is a software toolbox for machine learning algorithms, with a special focus on large-scale applications. During Google Summer of Code 2014 we are looking forward to extending our library with both state-of-the-art and fundamental machine learning algorithms, as well as with infrastructure improvements. <br /><br />
+Shogun is a software toolbox for machine learning algorithms, with a special focus on large-scale applications. During Google Summer of Code 2014 we are looking forward to extending our library with both state-of-the-art and fundamental machine learning algorithms, as well as with infrastructure improvements. <br/><br/>
 
-Below is listed a set of suggestions for projects. If you have your own concrete idea, or want to solve a task proposed during previous years that has not been tackled yet - talk to us! We might be interested.<br /><br />
+Below is listed a set of suggestions for projects. If you have your own concrete idea, or want to solve a task proposed during previous years that has not been tackled yet - talk to us! We might be interested.<br/><br/>
 
-<i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2011_ideas.html">GSoC 2011 ideas</a></i><br />
-<i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2012_ideas.html">GSoC 2012 ideas</a></i><br />
-<i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2013_ideas.html">GSoC 2013 ideas</a></i><br /><br />
+<i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2011_ideas.html">GSoC 2011 ideas</a></i><br/>
+<i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2012_ideas.html">GSoC 2012 ideas</a></i><br/>
+<i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2013_ideas.html">GSoC 2013 ideas</a></i><br/><br/>
 <i><a href="http://www.shogun-toolbox.org">back to shogun toolbox homepage</a></i></td>
 </tr>
 </tbody>
@@ -85,18 +85,18 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 <li>
 <h4 id="deep_learning">Essential Deep Learning Modules</h4>
 <!-- Project generics -->
-<i>Mentor: Theofanis Karaletsos</i><br />
-<i>Shogun co-mentor: Sergey Lisitsyn</i><br />
-<i>Difficulty: <span class="medium">Medium</span></i><br />
-<i>Requirements: C++, Python, machine learning</i><br />
+<i>Mentor: Theofanis Karaletsos</i><br/>
+<i>Shogun co-mentor: Sergey Lisitsyn</i><br/>
+<i>Difficulty: <span class="medium">Medium</span></i><br/>
+<i>Requirements: C++, Python, machine learning</i><br/>
 <!-- Project description -->
 <p align="justify">
-Deep Learning has recently attracted a lot of attention in the Machine Learning community for its ability to learn features that allow high performance in a variety of tasks ranging from Computer Vision to Speech Recognition and Bioinformatics. The main goal of this task is to integrate essential building blocks of deep learning algorithms into Shogun. This includes Restricted Boltzmann Machines (RBM) and training algorithms, Deep Belief Networks (DBN), feed-forward networks and convolutional networks. The architecture and software design for flexible usage and adaptation of models should be created to build a foundation for integrating many more models, evaluation methods and training algorithms in the future. Speaking of details, this idea considers implementation of some software foundation for deep learning and the first few algorithms (RBMs and training, stacking of RBM’s, wake-sleep for DBN’s, discriminative fine-tuning with backprop, FFN). It is also worth to investigate current implementations (like Caffe [3]) and possibly even implement some wrapping code to use them in Shogun.<br /><br />
+Deep Learning has recently attracted a lot of attention in the Machine Learning community for its ability to learn features that allow high performance in a variety of tasks ranging from Computer Vision to Speech Recognition and Bioinformatics. The main goal of this task is to integrate essential building blocks of deep learning algorithms into Shogun. This includes Restricted Boltzmann Machines (RBM) and training algorithms, Deep Belief Networks (DBN), feed-forward networks and convolutional networks. The architecture and software design for flexible usage and adaptation of models should be created to build a foundation for integrating many more models, evaluation methods and training algorithms in the future. Speaking of details, this idea considers implementation of some software foundation for deep learning and the first few algorithms (RBMs and training, stacking of RBM’s, wake-sleep for DBN’s, discriminative fine-tuning with backprop, FFN). It is also worth to investigate current implementations (like Caffe [3]) and possibly even implement some wrapping code to use them in Shogun.<br/><br/>
 
-This idea is a great chance to learn the deep learning approach and essential principles of implementing deep learning algorithms. With such a serious attention being drawn to deep learning this is an important skill for any researcher or engineer working with data. <br /><br />
+This idea is a great chance to learn the deep learning approach and essential principles of implementing deep learning algorithms. With such a serious attention being drawn to deep learning this is an important skill for any researcher or engineer working with data. <br/><br/>
 
-References:<br />
-[1] Comprehensive Python toolboxes and tutorials with code examples are available in <a href="http://deeplearning.net/software/theano/">Theano</a> and in codeboxes of Alex Krizhevsky and Nitish Srivastava.<br />
+References:<br/>
+[1] Comprehensive Python toolboxes and tutorials with code examples are available in <a href="http://deeplearning.net/software/theano/">Theano</a> and in codeboxes of Alex Krizhevsky and Nitish Srivastava.<br/>
 [2] <a href="http://deeplearning.net/reading-list/">Deep learning reading list</a>.
 </p>
 </li>
@@ -105,18 +105,18 @@ References:<br />
 <li>
 <h4 id="variational_learning">Variational Learning for Recommendations with Big Data</h4>
 <!-- Project generics -->
-<i>Mentor: Mohammad Emtiyaz Khan</i><br />
-<i>Shogun co-mentor: Heiko Strathmann</i><br />
-<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br />
-<i>Requirements: C++, familiarity with optimization methods, prefered (but not required) that you have basic understanding of Bayesian models (or only GPs) and variational approximations</i><br />
-<i>Useful: Matlab (for reference code), Eigen3, Shogun’s GP framework</i><br />
+<i>Mentor: Mohammad Emtiyaz Khan</i><br/>
+<i>Shogun co-mentor: Heiko Strathmann</i><br/>
+<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br/>
+<i>Requirements: C++, familiarity with optimization methods, prefered (but not required) that you have basic understanding of Bayesian models (or only GPs) and variational approximations</i><br/>
+<i>Useful: Matlab (for reference code), Eigen3, Shogun’s GP framework</i><br/>
 <!-- Project description -->
 <p align="justify">
-The era of big data brings calls for methods that scale well. For example, websites such as Netfix and Amazon collect huge amount of data about users’ preferences. Efficient use of such data can help improve recommendations and user experience through personalization. In this project, our goal will be to develop scalable code for learning from such data.<br /><br />
+The era of big data brings calls for methods that scale well. For example, websites such as Netfix and Amazon collect huge amount of data about users’ preferences. Efficient use of such data can help improve recommendations and user experience through personalization. In this project, our goal will be to develop scalable code for learning from such data.<br/><br/>
 
-We will focus on models that use matrix factorization and Gaussian processes. Matrix factorization is a very popular model for recommendation systems - in fact, in the Netflix challenge, this model had the best performance obtained by any single model! We will use variational approximations since they have potential to scale well to big data. The objective function in Bayesian models are usually intractable and variational methods instead optimize a tractable lower bound to learn the model.<br /><br />
+We will focus on models that use matrix factorization and Gaussian processes. Matrix factorization is a very popular model for recommendation systems - in fact, in the Netflix challenge, this model had the best performance obtained by any single model! We will use variational approximations since they have potential to scale well to big data. The objective function in Bayesian models are usually intractable and variational methods instead optimize a tractable lower bound to learn the model.<br/><br/>
 
-Our main tool in this project will be the implementation of many convex optimization methods for fast variational inference. Previously, in other GSoCs, Jacob Walker and Roman Votjakov implemented a flexible framework for Gaussian process regression and classification models. We will use their initial work and extend the existing infrastructure to allow variational inference for GPs.<br />
+Our main tool in this project will be the implementation of many convex optimization methods for fast variational inference. Previously, in other GSoCs, Jacob Walker and Roman Votjakov implemented a flexible framework for Gaussian process regression and classification models. We will use their initial work and extend the existing infrastructure to allow variational inference for GPs.<br/>
 </p>
 
 The project time line along with estimated time and difficulty level. (Note that this is a preliminary list, which might prove to be too much.)
@@ -139,25 +139,25 @@ You will gain experience working with optimization algorithms, and get a little 
 <li>
 <h4 id="fundamental">Fundamental Machine Learning algorithms</h4>
 <!-- Project generics -->
-<i>Mentor: Fernando Iglesias</i><br />
-<i>Difficulty: <span class="easy">Easy</span> to <span class="medium">Medium</span></i><br />
-<i>Requirements: experience with C++, Python, Octave/Matlab, understanding of basic machine learning algorithms</i><br />
-<i>Useful: experience with Eigen3</i><br />
+<i>Mentor: Fernando Iglesias</i><br/>
+<i>Difficulty: <span class="easy">Easy</span> to <span class="medium">Medium</span></i><br/>
+<i>Requirements: experience with C++, Python, Octave/Matlab, understanding of basic machine learning algorithms</i><br/>
+<i>Useful: experience with Eigen3</i><br/>
 <!-- Project description -->
 <p align="justify">
-The machine learning research community is fast-paced, and international conferences produce new methods every year. Nevertheless, well-established, fundamental algorithms are an indispensable tool for most practitioners as they are well understood and their performance has been proven in a widen range of applications. The goal of this project is to implement fundamental ML algorithms that Shogun currently lacks, polishing and improving the existing ones, and illustrating their use through (multi-language) examples and IPython notebooks on real-life datasets.<br /><br />
+The machine learning research community is fast-paced, and international conferences produce new methods every year. Nevertheless, well-established, fundamental algorithms are an indispensable tool for most practitioners as they are well understood and their performance has been proven in a widen range of applications. The goal of this project is to implement fundamental ML algorithms that Shogun currently lacks, polishing and improving the existing ones, and illustrating their use through (multi-language) examples and IPython notebooks on real-life datasets.<br/><br/>
 
-A first part of the project involves the implementation of decision trees in Shogun. The C4.5 algorithm [1] is a starting point -- we are also open to suggestions. Once a method to generate a decision tree is ready, use it to provide a random forests implementation [2]. <br /><br />
+A first part of the project involves the implementation of decision trees in Shogun. The C4.5 algorithm [1] is a starting point -- we are also open to suggestions. Once a method to generate a decision tree is ready, use it to provide a random forests implementation [2]. <br/><br/>
 
-A second part is k-nearest neighbours (kNN). For fast kNN search, there is a very efficient cover tree implementation in Shogun, which is however not easy to maintain and has problems in certain contexts. An additional task here is to implement another tree data structure for fast kNN, such as kd-trees [3], whose performance is somewhat comparable to the current cover tree implementation.<br /><br />
+A second part is k-nearest neighbours (kNN). For fast kNN search, there is a very efficient cover tree implementation in Shogun, which is however not easy to maintain and has problems in certain contexts. An additional task here is to implement another tree data structure for fast kNN, such as kd-trees [3], whose performance is somewhat comparable to the current cover tree implementation.<br/><br/>
 
-Yet another new fundamental method we want to include in Shogun is kernel density estimation [4] (also known as Parzen windows in some domains). Such an implementation must be able to leverage the many kernels available in Shogun.<br /><br />
+Yet another new fundamental method we want to include in Shogun is kernel density estimation [4] (also known as Parzen windows in some domains). Such an implementation must be able to leverage the many kernels available in Shogun.<br/><br/>
 
-We would also like to have a more flexible Principal Component Analysis (PCA) and Kernel PCA (KPCA) interface. For instance, we would like to give the user the possibility to choose between using Singular Value Decomposition (SVD) or eigendecomposition depending on whether the number of feature vectors is larger than the number of dimensions, or vice versa. The current implementations could be polished as well, introducing the use of Eigen3.<br /><br />
+We would also like to have a more flexible Principal Component Analysis (PCA) and Kernel PCA (KPCA) interface. For instance, we would like to give the user the possibility to choose between using Singular Value Decomposition (SVD) or eigendecomposition depending on whether the number of feature vectors is larger than the number of dimensions, or vice versa. The current implementations could be polished as well, introducing the use of Eigen3.<br/><br/>
 
-Least-Angle Regression (LARS) and Lasso are two fundamental statistical tools for regression already implemented in Shogun. We would like to have a slightly large example in the form of a notebook that compares these regression techniques. This comparison would become broader including other methods implemented in Shogun such as Support Vector Regression and Gaussian Processes [5].<br /><br />
+Least-Angle Regression (LARS) and Lasso are two fundamental statistical tools for regression already implemented in Shogun. We would like to have a slightly large example in the form of a notebook that compares these regression techniques. This comparison would become broader including other methods implemented in Shogun such as Support Vector Regression and Gaussian Processes [5].<br/><br/>
 
-A very important part of this project is to illustrate how these methods should be used using IPython notebooks and examples (at least covering C++, Python, and Octave/Matlab). The student should be able to come up with (or find in textbooks, articles, etc) good-looking -- i.e. with nice figures -- examples that illustrate the concepts underlying the implemented algorithms. A large-scale classification application with kNN is another idea.<br /><br />
+A very important part of this project is to illustrate how these methods should be used using IPython notebooks and examples (at least covering C++, Python, and Octave/Matlab). The student should be able to come up with (or find in textbooks, articles, etc) good-looking -- i.e. with nice figures -- examples that illustrate the concepts underlying the implemented algorithms. A large-scale classification application with kNN is another idea.<br/><br>
 
 Suggested entrance tasks:
 <ul>
@@ -165,13 +165,13 @@ Suggested entrance tasks:
 <li>Get <a href="https://github.com/shogun-toolbox/shogun/pull/1110">this ID3 implementation</a> ready to be merged.</li>
 <li>Write unit tests for LARS and Lasso.</li>
 <li>Write an IPython notebook illustrating and comparing LARS and Lasso. High-dimensional data could be used to show the strength of LARS.</li>
-</ul><br />
+</ul>
 
-References:<br />
-[1] <a href="http://en.wikipedia.org/wiki/C4.5_algorithm">C4.5.</a><br />
-[2] <a href="http://en.wikipedia.org/wiki/Random_forests">Random forests.</a><br />
-[3] <a href="http://en.wikipedia.org/wiki/Kd_tree">KD-trees.</a><br />
-[4] <a href="http://en.wikipedia.org/wiki/Kernel_density_estimation">Kernel Density Estimation</a>.<br />
+References:<br/>
+[1] <a href="http://en.wikipedia.org/wiki/C4.5_algorithm">C4.5.</a><br/>
+[2] <a href="http://en.wikipedia.org/wiki/Random_forests">Random forests.</a><br/>
+[3] <a href="http://en.wikipedia.org/wiki/Kd_tree">KD-trees.</a><br/>
+[4] <a href="http://en.wikipedia.org/wiki/Kernel_density_estimation">Kernel Density Estimation</a>.<br/>
 [5] <a href="http://shogun-toolbox.org/static/notebook/current/gaussian_processes.html">GPs notebook</a>.
 </li>
 
@@ -179,20 +179,20 @@ References:<br />
 <li>
 <h4 id="one_class">Implementation of Recent One-class SVM Extensions</h4>
 <!-- Project generics -->
-<i>Mentor: Nico Goernitz</i><br />
-<i>Difficulty: <span class="medium">Medium</span></i><br />
-<i>Requirements: C++, Python, basic machine learning and optimization skills</i><br />
+<i>Mentor: Nico Goernitz</i><br/>
+<i>Difficulty: <span class="medium">Medium</span></i><br/>
+<i>Requirements: C++, Python, basic machine learning and optimization skills</i><br/>
 <!-- Project description -->
 <p align="justify">
-One-class learning, aka. density level-set estimation, anomaly detection, fraud detection, concept learning, etc., has been around for a while. Most famous algorithm are the one-class support vector machine (Schoelkopf et al, 1999) and the support vector data description (Tax and Duin, 1999). Both share common ideas and, in fact, under fairly general circumstances, are interchangeable. Due to their simplicity, they have been applied in many different areas and various, even surprising, settings (e.g. multi-class classification, just to name one that contradicts its name).<br /><br />
+One-class learning, aka. density level-set estimation, anomaly detection, fraud detection, concept learning, etc., has been around for a while. Most famous algorithm are the one-class support vector machine (Schoelkopf et al, 1999) and the support vector data description (Tax and Duin, 1999). Both share common ideas and, in fact, under fairly general circumstances, are interchangeable. Due to their simplicity, they have been applied in many different areas and various, even surprising, settings (e.g. multi-class classification, just to name one that contradicts its name).<br/><br/>
 
-Semi-supervised anomaly detection (2013), latent variable support vector data description (2014) and multitask one-class support vector machines (2010) are some quite recent extensions based on one-class SVM and SVDD. Some of the above methods have multiple formulations (convex and convex approximations), while others are intrinisc non-convex.<br /><br />
+Semi-supervised anomaly detection (2013), latent variable support vector data description (2014) and multitask one-class support vector machines (2010) are some quite recent extensions based on one-class SVM and SVDD. Some of the above methods have multiple formulations (convex and convex approximations), while others are intrinisc non-convex.<br/><br/>
 
-Basic optimization knowledge is neccessary as well as understanding of the underlying machine learning techniques (SVMs, kernels, regularization, etc.). Implementation languages will be C++ and Python. Standalone Python implementations of the above mentioned methods will be provided.<br /><br />
+Basic optimization knowledge is neccessary as well as understanding of the underlying machine learning techniques (SVMs, kernels, regularization, etc.). Implementation languages will be C++ and Python. Standalone Python implementations of the above mentioned methods will be provided.<br/><br/>
 
-References:<br />
-N. Görnitz, M. Kloft, K. Rieck, U. Brefeld "Toward Supervised Anomaly Detection" Journal of Artificial Intelligence Research (JAIR), 2013.<br />
-Haiqin Yang, Irwin King, Michael R. Lyu, "Multi-task Learning for One-class Classification" The 2010 International Joint Conference on Neural Networks (IJCNN)<br />
+References:<br/>
+N. Görnitz, M. Kloft, K. Rieck, U. Brefeld "Toward Supervised Anomaly Detection" Journal of Artificial Intelligence Research (JAIR), 2013.<br/>
+Haiqin Yang, Irwin King, Michael R. Lyu, "Multi-task Learning for One-class Classification" The 2010 International Joint Conference on Neural Networks (IJCNN)<br/>
 N. Görnitz, A. Porbadnigk, A. Binder, C. Sannelli, M. Braun, K.-R. Mueller, M. Kloft "Learning and Evaluation in Presence of Non-i.i.d. Label Noise" (accepted at) AISTATS, 2014
 </p>
 </li>
@@ -201,13 +201,13 @@ N. Görnitz, A. Porbadnigk, A. Binder, C. Sannelli, M. Braun, K.-R. Mueller, M. 
 <li>
 <h4 id="fast_food">Large Scale Learning: approximative kernel expansion in loglinear time (aka Fast Food)</h4>
 <!-- Project generics -->
-<i>Mentor:  Andreas Ziehe</i><br />
-<i>Shogun co-mentor: Soeren Sonnenburg</i><br />
-<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br />
-<i>Requirements: C++, machine learning, linear algebra</i><br />
+<i>Mentor:  Andreas Ziehe</i><br/>
+<i>Shogun co-mentor: Soeren Sonnenburg</i><br/>
+<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br/>
+<i>Requirements: C++, machine learning, linear algebra</i><br/>
 <!-- Project description -->
 <p align="justify">
-Large scale learning with kernels is hindered by the fact that kernel classifiers require computing kernel expansions of the form \( f(x)=\sum_{i=1}^N \alpha_i K(x,x_i) \). Obviously, the more non-zero coefficients \( \alpha_i \) there are the slower the kernel machine. Recently, progress has been made in drastically speeding up kernel machines by approximating the kernel feature space [1,2,3]. The "Fast Food" approach [3] which can be seen as a modification of the "random kitchen sinks" method offers O(n log d) computation and O(n) storage for n basis functions in d dimensions. The key to achieve these speedups is based on using the Fast Hadamard transform for fast matrix-vector multiplication [6].<br /><br />
+Large scale learning with kernels is hindered by the fact that kernel classifiers require computing kernel expansions of the form \( f(x)=\sum_{i=1}^N \alpha_i K(x,x_i) \). Obviously, the more non-zero coefficients \( \alpha_i \) there are the slower the kernel machine. Recently, progress has been made in drastically speeding up kernel machines by approximating the kernel feature space [1,2,3]. The "Fast Food" approach [3] which can be seen as a modification of the "random kitchen sinks" method offers O(n log d) computation and O(n) storage for n basis functions in d dimensions. The key to achieve these speedups is based on using the Fast Hadamard transform for fast matrix-vector multiplication [6].<br/><br/>
 
 Suggested road map:
 <ul>
@@ -216,14 +216,13 @@ Suggested road map:
 <li>Familiarize yourself with the Fast Hadamard transform and its implementation [6].</li>
 <li>Familiarize with [3,4,5] and implement the FastFood method. Implement a speed comparison of [1,2,3].</li>
 </ul>
-<br />
 
-References:<br />
-[1] Efficient Additive Kernels via Explicit Feature Maps (Vedaldi, 2011)<br />
-[2] <a href="https://research.microsoft.com/apps/video/dl.aspx?id=103390&l=i">Random kitchen sinks.</a><br />
-[3] <a href="http://jmlr.org/proceedings/papers/v28/le13.html">Fastfood - Computing Hilbert Space Expansions in loglinear time, Quoc Le, Tamas Sarlos, Alexander Smola; JMLR W&CP 28 (3): 244–252, 2013</a><br />
-[4] <a href="http://videolectures.net/nipsworkshops2012_smola_kernel">Fast Food video lecture.</a><br />
-[5] <a href="http://techtalks.tv/talks/fastfood-computing-hilbert-space-expansions-in-loglinear-time/58385/">Fast Food techtalk</a><br />
+References:<br/>
+[1] Efficient Additive Kernels via Explicit Feature Maps (Vedaldi, 2011)<br/>
+[2] <a href="https://research.microsoft.com/apps/video/dl.aspx?id=103390&l=i">Random kitchen sinks.</a><br/>
+[3] <a href="http://jmlr.org/proceedings/papers/v28/le13.html">Fastfood - Computing Hilbert Space Expansions in loglinear time, Quoc Le, Tamas Sarlos, Alexander Smola; JMLR W&CP 28 (3): 244–252, 2013</a><br/>
+[4] <a href="http://videolectures.net/nipsworkshops2012_smola_kernel">Fast Food video lecture.</a><br/>
+[5] <a href="http://techtalks.tv/talks/fastfood-computing-hilbert-space-expansions-in-loglinear-time/58385/">Fast Food techtalk</a><br/>
 [6] <a href"http://spiral.net/software/wht.html">SPIRAL WHT Package.</a>
 </li>
 
@@ -231,14 +230,14 @@ References:<br />
 <li>
 	<h4 id="mcmc">Generic Framework for Markov Chain Monte Carlo Algorithms and Stan Interface</h4>
 	<!-- Project generics -->
-	<i>Mentors: Theodore Papamarkou, Dino Sejdinovic</i><br />
-	<i>Shogun co-mentor: Heiko Strathmann</i><br />
+	<i>Mentors: Theodore Papamarkou, Dino Sejdinovic</i><br/>
+	<i>Shogun co-mentor: Heiko Strathmann</i><br/>
 	<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i>
-	<i>Requirements: C++, basic understanding of Monte Carlo methods</i><br />
-	<i>Useful: Stan, Shogun’s GP framework, experience with Hamiltonian Monte Carlo</i><br />
+	<i>Requirements: C++, basic understanding of Monte Carlo methods</i><br/>
+	<i>Useful: Stan, Shogun’s GP framework, experience with Hamiltonian Monte Carlo</i><br/>
 	<!-- Project description -->
 	<p align="justify">
-	Monte Carlo methods are used for Bayesian statistical analysis in various disciplines, including machine learning. For this reason, several statistical methods coded in some of Shogun’s existing toolboxes require interacting with Monte Carlo samplers. An example of this is fully Bayesian GP classification that requires sampling from the posterior of the GP hyperparameters. The aim of this project is to provide a coding framework for Monte Carlo sampling in Shogun. Other sub-parts in Shogun will be able to use this framework in order to either call Monte Carlo samplers already available in the framework or code new samplers by complying to the framework’s unified API. The fully modular framework would allow both the adaptive and the non-adaptive MCMC methods, and an easy addition of the novel adaptation procedures, such as Kameleon MCMC [3]. In addition, pseudo-marginal MCMC (based on [1]) will be included. Main application would be in the use of MCMC methods for Gaussian Process Classification, building on two previous GSoC projects on GPs.<br /><br />
+	Monte Carlo methods are used for Bayesian statistical analysis in various disciplines, including machine learning. For this reason, several statistical methods coded in some of Shogun’s existing toolboxes require interacting with Monte Carlo samplers. An example of this is fully Bayesian GP classification that requires sampling from the posterior of the GP hyperparameters. The aim of this project is to provide a coding framework for Monte Carlo sampling in Shogun. Other sub-parts in Shogun will be able to use this framework in order to either call Monte Carlo samplers already available in the framework or code new samplers by complying to the framework’s unified API. The fully modular framework would allow both the adaptive and the non-adaptive MCMC methods, and an easy addition of the novel adaptation procedures, such as Kameleon MCMC [3]. In addition, pseudo-marginal MCMC (based on [1]) will be included. Main application would be in the use of MCMC methods for Gaussian Process Classification, building on two previous GSoC projects on GPs.<br/><br/>
 
 	The project entails the following sequential steps:
 	<ul>
@@ -257,13 +256,12 @@ References:<br />
 	</li>
 	<li>The final stage will involve using the coded API to code an interface for Stan in Shogun. This last step is provisional and its progress will depend on the timeline of the previous two steps and on the technicalities arising from Stan’s coding infrastructure. Ideally, Stan’s interface in Shogun will be developed, yet if technical issues hinder timely development, then minimally a plan will provided outlining how future development will tackle the task.</li>
 	</ul>
-	<br />
 
-	The framework has been already partially conceptualized and documented using a UML graph, see [2]. A Python prototype has also been coded to implement the UML graph, see [2]. This preparatory work will ease the completion of step 1, shifting the focus to step 2. You will play a key role in the initial step of the long-term effort to extend functionalities offered by Shogun, and to build a bridge between toolsets used by the Statistics and ML practitioners. This would potentially have a large impact in terms of usage, as MCMC methods are a ubiquitous tool in a variety of scientific disciplines. Solid understanding of MCMC is crucial, however it is not required that you understand all sophisticated methods in detail yet. We will provide a detailed description of all involved algorithms along with working implementations and help you on the way.<br /><br />
+	The framework has been already partially conceptualized and documented using a UML graph, see [2]. A Python prototype has also been coded to implement the UML graph, see [2]. This preparatory work will ease the completion of step 1, shifting the focus to step 2. You will play a key role in the initial step of the long-term effort to extend functionalities offered by Shogun, and to build a bridge between toolsets used by the Statistics and ML practitioners. This would potentially have a large impact in terms of usage, as MCMC methods are a ubiquitous tool in a variety of scientific disciplines. Solid understanding of MCMC is crucial, however it is not required that you understand all sophisticated methods in detail yet. We will provide a detailed description of all involved algorithms along with working implementations and help you on the way.<br/><br/>
 
-	References:<br />
-	[1] <a href="http://www.shogun-toolbox.org/doc/en/3.0.0/classshogun_1_1CInferenceMethod.html#a6e4c3c79df2e7dbb33a0cd9d392dbc6b.">CInferenceMethod in Shogun's Doxygen documentation.</a><br />
-	[2] <a href="https://github.com/karlnapf/shogun-mcmc-prototype">Shogun MCMC prototype</a>, in particular the UML diagram.<br />
+	References:<br/>
+	[1] <a href="http://www.shogun-toolbox.org/doc/en/3.0.0/classshogun_1_1CInferenceMethod.html#a6e4c3c79df2e7dbb33a0cd9d392dbc6b.">CInferenceMethod in Shogun's Doxygen documentation.</a><br/>
+	[2] <a href="https://github.com/karlnapf/shogun-mcmc-prototype">Shogun MCMC prototype</a>, in particular the UML diagram.<br/>
 	[3] <a href="http://arxiv.org/abs/1307.5302">D. Sejdinovic, M. Lomeli Garcia, H. Strathmann, C. Andrieu and A. Gretton, Kernel adaptive Metropolis-Hastings</a>, working implementation at <a href="https://github.com/karlnapf/kameleon-mcmc">GitHub</a>.
 </li>
 
@@ -271,28 +269,28 @@ References:<br />
 <li>
 	<h4 id="okl">Output Kernel Learning</h4>
 	<!-- Project generics -->
-	<i>Mentor: Cheng Soon Ong</i><br />
-	<i>Shogun co-mentor: Sergey Lisitsyn</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: C++, linear algebra</i><br />
+	<i>Mentor: Cheng Soon Ong</i><br/>
+	<i>Shogun co-mentor: Sergey Lisitsyn</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: C++, linear algebra</i><br/>
 	<!-- Project description -->
 	<p align="justify">
-	In this task a student would work on implementations of a few algorithms for output kernel learning. Output kernel learning is a kernel-based technology to solve learning problems with multiple outputs, such as multi-class and multi-label classification or vectorial regression while automatically learning the relationships between the different output components. This idea is mainly about implementing the algorithm with proper testing routines and gives student a great opportunity to work on state-of-the-art machine learning algorithms and problem formulations.<br /><br />
+	In this task a student would work on implementations of a few algorithms for output kernel learning. Output kernel learning is a kernel-based technology to solve learning problems with multiple outputs, such as multi-class and multi-label classification or vectorial regression while automatically learning the relationships between the different output components. This idea is mainly about implementing the algorithm with proper testing routines and gives student a great opportunity to work on state-of-the-art machine learning algorithms and problem formulations.<br/><br/>
 	
-	References:<br />
-	[1] <a href="http://www.sciencedirect.com/science/article/pii/S0925231213003135">F. Dinuzzo. Learning output kernels for multi-task problems. Neurocomputing, 118:119-126, 2013.</a><br />
-	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br />
-	[3] <a href="http://www.icml-2011.org/papers/54_icmlpaper.pdf ">F. Dinuzzo, C. S. Ong, P. Gehler, and G. Pillonetto. Learning output kernels with block coordinate descent. In International Conference on Machine Learning, Bellevue WA (USA), 2011.</a><br />
+	References:<br/>
+	[1] <a href="http://www.sciencedirect.com/science/article/pii/S0925231213003135">F. Dinuzzo. Learning output kernels for multi-task problems. Neurocomputing, 118:119-126, 2013.</a><br/>
+	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br/>
+	[3] <a href="http://www.icml-2011.org/papers/54_icmlpaper.pdf ">F. Dinuzzo, C. S. Ong, P. Gehler, and G. Pillonetto. Learning output kernels with block coordinate descent. In International Conference on Machine Learning, Bellevue WA (USA), 2011.</a><br/>
 </li>
 
 <!-- VARIABLE INTERACTIONS PROJECT IDEA -->
 <li>
 	<h4 id="variable_interactions">Testing and Measuring Variable Interactions With Kernels</h4>
 	<!-- Project generics -->
-	<i>Mentor: Dino Sejdinovic</i><br />
-	<i>Shogun co-mentor: Heiko Strathmann</i><br />
-	<i>Difficulty: <spanc class="difficult">Difficult</span></i><br />
-	<i>Requirenemtns: Strong C++ skills, basic knowledge of kernel methods and hypothesis testing</i><br />
+	<i>Mentor: Dino Sejdinovic</i><br/>
+	<i>Shogun co-mentor: Heiko Strathmann</i><br/>
+	<i>Difficulty: <spanc class="difficult">Difficult</span></i><br/>
+	<i>Requirenemtns: Strong C++ skills, basic knowledge of kernel methods and hypothesis testing</i><br/>
 	<i>Useful: matlab, python, eigen3</i><br/>
 	<!-- Project description -->
 	<p align="justify">
@@ -312,7 +310,6 @@ References:<br />
 		<li>Detailed iPython worked examples for the assessment of testing performance and the feature selection performance -- these will include a </li>big data problem with millions of data points. 
 		<li>API illustration via mini-examples in both C++ and at least two modular language bindings.</li>
 		</ul>
-		<br/>
 
 		References:<br/>
 		[1] A. Gretton, K. Fukumizu, C.H. Teo, L. Song, B. Scholkopf and A. Smola, A kernel statistical test of independence. In Advances in Neural Information Processing Systems (NIPS), 2008.<br/>
@@ -330,9 +327,9 @@ References:<br />
 <li>
 	<h4 id="dictionary_learning">Dictionary Learning</h4>
 	<!-- Project generics -->
-	<i>Mentor: Sergey Lisitsyn</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: C++, Python</i><br />
+	<i>Mentor: Sergey Lisitsyn</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: C++, Python</i><br/>
 	<!-- Project description -->
 	<p align="justify">
 	Dictionary learning is an optimization approach to avoid feature engineering in machine learning. This task is a great opportunity to learn basics of dictionary learning and gradually reach state-of-the-art techniques relevant in various machine learning applications. 
@@ -343,10 +340,10 @@ References:<br />
 <li>
 	<h4 id="lpqp">LP/QP Optimization Framework</h4>
 	<!-- Project generics -->
-	<i>Mentor: Viktor Gal</i><br />
-	<i>Difficulty: <span class="difficult">Difficult</span></i><br />
-	<i>Requirements: optimization theory, good c++ skills</i><br />
-	<i>Useful: opencl/cuda knowledge</i><br />
+	<i>Mentor: Viktor Gal</i><br/>
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br/>
+	<i>Requirements: optimization theory, good c++ skills</i><br/>
+	<i>Useful: opencl/cuda knowledge</i><br/>
 	<!-- Project description -->
 	<p align="justify">
 	This task considers implementation of a framework for LP/QP optimization within Shogun. It shall be as modular as possible, since we want to have a general KKT solver as well as part of this project. The framework would be a thin wrapper that defines mappings for several existing and known optimization libraries (libqp, mosek, glpk, cplex, etc.). Using this framework implement a cone programming (both LP and QP).
@@ -357,9 +354,9 @@ References:<br />
 <li>
 	<h4 id="multilabel">Large-Scale (hierarchical) Multi-Label Classification</h4>
 	<!-- Project generics -->
-	<i>Mentor: Thoralf Klein</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: multi-label theory, structured-output learning, good c++ skills</i><br />
+	<i>Mentor: Thoralf Klein</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: multi-label theory, structured-output learning, good c++ skills</i><br/>
 	<!-- Project description -->
 	<p align="justify">
 	Implement models to perform large-scale (hierarchical) multi-label classification using Shogun.  This could be done using the structured-output learning framework, or by implementing custom multi-label classifiers. Dealing with multi-label outputs with 1000 or more classes per instance is not trivial in Shogun: Parts of the code base are not prepared for this and do not scale well. Thus, one major task will be optimizing of streamlining Shogun’s infrastructure for (memory-) efficient training in these settings.
@@ -370,10 +367,10 @@ References:<br />
 <li>
 	<h4 id="sosvm">Implement dual coordinate solver for Structured Output SVMs</h4>
 	<!-- Project generics -->
-	<i>Mentor: Vojtech Franc</i><br />
-	<i>Mentor: Soeren Sonnenburg</i><br />
-	<i>Difficulty: <span class="difficult">Difficult</span></i><br />
-	<i>Requirements: optimization theory, C++</i><br />
+	<i>Mentor: Vojtech Franc</i><br/>
+	<i>Mentor: Soeren Sonnenburg</i><br/>
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br/>
+	<i>Requirements: optimization theory, C++</i><br/>
 	<!-- Project description -->
 	<p align="justify">
 	This task considers the implementation of a recently proposed dual coordinate solver (link will come soon; paper is under review) which uses the WSS2 strategy known from two-class LIBSVM to structured output setting. This is an opportunity to learn a lot about numeric optimization algorithms and structured output task formulations.
@@ -389,9 +386,9 @@ References:<br />
 <li>
 	<h4 id="svmbright">SVMbright - SVM^light as MIT license rewrite</h4>
 	<!-- Project generics -->
-	<i>Mentor: Björn Esser</i><br />
-	<i>Difficulty: <span class="difficult">Difficult</span></i><br />
-	<i>Requirements: C++(11) programming, support vector machines, optimization theory</i><br />
+	<i>Mentor: Björn Esser</i><br/>
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br/>
+	<i>Requirements: C++(11) programming, support vector machines, optimization theory</i><br/>
 	<!-- Project description -->
 	<p align="justify">
 	<a href="http://svmlight.joachims.org/">SVMlight</a> is one of the first and the most advanced SVM solvers. While efficient, it is not open source. This idea is about implementing the algorithms described in <a href="http://www.cs.cornell.edu/people/tj/publications/joachims_98c.pdf ">Joachims 98</a> as free, MIT-style licensed software.<br/><br/>
@@ -406,9 +403,9 @@ References:<br />
 <li>
 	<h4 id="opencv">OpenCV Integration and Computer Vision Applications</h4>
 	<!-- Project generics -->
-	<i>Mentor: Kevin Hughes and Sergey Lisitsyn</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: understanding of computer vision and machine learning, good C++ and python skills</i><br />
+	<i>Mentor: Kevin Hughes and Sergey Lisitsyn</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: understanding of computer vision and machine learning, good C++ and python skills</i><br/>
 	<!-- Project description -->
 	<p align="justify">
 	Build <a href="opencv.org">OpenCV</a> integration into Shogun using appropriate design patterns (likely a factory) and update any of the surrounding Shogun infrastructure as required. This <a href="https://gist.github.com/pickle27/6751722">Gist</a> might be useful. After integrating with OpenCV create several involved applications using Shogun and OpenCV. Some possibilities include: Optical Character Recognition (OCR), License Plate Identification, Facial Recognition, Fingerprint Identification or suggest your own application that interests you!
@@ -419,8 +416,8 @@ References:<br />
 <li>
 	<h4 id="plugin">Implement a framework for plugin-based architecture</h4>
 	<!-- Project generics -->
-	<i>Mentors: Sergey Lisitsyn, Viktor Gal</i><br />
-	<i>Difficulty: <span class="difficult">Difficult</span></i><br />
+	<i>Mentors: Sergey Lisitsyn, Viktor Gal</i><br/>
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br/>
 	<i>Requirements: advanced C++ skills (rather deep understanding of shared libraries, linking, etc)</i><br/>
 	<!-- Project description -->
 	<p align="justify">
@@ -432,9 +429,9 @@ References:<br />
 <li>
 	<h4 id="model_selection">Implement an easy to use model selection API</h4>
 	<!-- Project generics -->
-	<i>Mentor: Sergey Lisitsyn</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: medium C++ skills, any kind of a sense of syntax beauty</i><br />
+	<i>Mentor: Sergey Lisitsyn</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: medium C++ skills, any kind of a sense of syntax beauty</i><br/>
 	<!-- Project description -->
 	<p align="justify">
 	The Shogun’s model selection framework is a powerful tool to select parameters. Although it lacks some user friendly syntax and is overly verbose. This idea considers endeavour of re-designing the model selection framework to be much more easy to use. The student assigned for this project would learn how to design cross-language APIs.
