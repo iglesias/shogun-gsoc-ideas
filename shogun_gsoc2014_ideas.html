@@ -50,6 +50,8 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 <li><a href="#deep_learning">Essential Deep Learning Modules</a> </li>
 <li><a href="#variational_learning">Variational Learning for Recommendations with Big Data</a> </li>
 <li><a href="#fundamental">Fundamental Machine Learning algorithms</a> </li>
+<li><a href="#one_class">Implementation of Recent One-class SVM Extensions</a> </li>
+<li><a href="#fast_food">Large Scale Learning: approximative kernel expansion in loglinear time (aka Fast Food)</a> </li>
 <li><a href="#mcmc">Generic Framework for Markov Chain Monte Carlo Algorithms and Stan Interface</a> </li>
 <li><a href="#okl">Output Kernel Learning</a> </li>
 <li><a href="#variable_interactions">Testing and Measuring Variable Interactions with Kernels</a> </li>
@@ -158,6 +160,59 @@ References:<br />
 [2] <a href="http://en.wikipedia.org/wiki/Random_forests">Random forests.</a><br />
 [3] <a href="http://en.wikipedia.org/wiki/Kd_tree">KD-trees.</a><br />
 [4] <a href="http://en.wikipedia.org/wiki/Kernel_density_estimation">Kernel Density Estimation</a>.<br />
-[5] <a href="http://shogun-toolbox.org/static/notebook/current/gaussian_processes.html">GPs notebook</a>.<br />
+[5] <a href="http://shogun-toolbox.org/static/notebook/current/gaussian_processes.html">GPs notebook</a>.
+</p>
+</li>
+
+<!-- ONE-CLASS SVM PROJECT IDEA -->
+<li>
+<h4 id="one_class">Implementation of Recent One-class SVM Extensions</h4>
+<!-- Project generics -->
+<i>Mentor: Nico Goernitz</i><br />
+<i>Difficulty: <span class="medium">Medium</span></i><br />
+<i>Requirements: C++, Python, basic machine learning and optimization skills</i><br />
+<!-- Project description -->
+<p align="justify">
+One-class learning, aka. density level-set estimation, anomaly detection, fraud detection, concept learning, etc., has been around for a while. Most famous algorithm are the one-class support vector machine (Schoelkopf et al, 1999) and the support vector data description (Tax and Duin, 1999). Both share common ideas and, in fact, under fairly general circumstances, are interchangeable. Due to their simplicity, they have been applied in many different areas and various, even surprising, settings (e.g. multi-class classification, just to name one that contradicts its name).<br /><br />
+
+Semi-supervised anomaly detection (2013), latent variable support vector data description (2014) and multitask one-class support vector machines (2010) are some quite recent extensions based on one-class SVM and SVDD. Some of the above methods have multiple formulations (convex and convex approximations), while others are intrinisc non-convex.<br /><br />
+
+Basic optimization knowledge is neccessary as well as understanding of the underlying machine learning techniques (SVMs, kernels, regularization, etc.). Implementation languages will be C++ and Python. Standalone Python implementations of the above mentioned methods will be provided.<br /><br />
+
+References:<br />
+N. Görnitz, M. Kloft, K. Rieck, U. Brefeld "Toward Supervised Anomaly Detection" Journal of Artificial Intelligence Research (JAIR), 2013.<br />
+Haiqin Yang, Irwin King, Michael R. Lyu, "Multi-task Learning for One-class Classification" The 2010 International Joint Conference on Neural Networks (IJCNN)<br />
+N. Görnitz, A. Porbadnigk, A. Binder, C. Sannelli, M. Braun, K.-R. Mueller, M. Kloft "Learning and Evaluation in Presence of Non-i.i.d. Label Noise" (accepted at) AISTATS, 2014
+</p>
+</li>
+
+<!-- FAST FOOD PROJECT IDEA -->
+<li>
+<h4 id="fast_food">Large Scale Learning: approximative kernel expansion in loglinear time (aka Fast Food)</h4>
+<!-- Project generics -->
+<i>Mentor:  Andreas Ziehe</i><br />
+<i>Shogun co-mentor: Soeren Sonnenburg</i><br />
+<i>Difficulty: <span class="medium">Medium</span></i><br /> to <span class="difficult">Difficult</span></i><br />
+<i>Requirements: C++, machine learning, linear algebra</i><br />
+<!-- Project description -->
+<p align="justify">
+Large scale learning with kernels is hindered by the fact that kernel classifiers require computing kernel expansions of the form \( f(x)=\sum_{i=1}^N \alpha_i K(x,x_i) \). Obviously, the more non-zero coefficients \( \alpha_i \) there are the slower the kernel machine. Recently, progress has been made in drastically speeding up kernel machines by approximating the kernel feature space [1,2,3]. The "Fast Food" approach [3] which can be seen as a modification of the "random kitchen sinks" method offers O(n log d) computation and O(n) storage for n basis functions in d dimensions. The key to achieve these speedups is based on using the Fast Hadamard transform for fast matrix-vector multiplication [6].<br /><br />
+
+Suggested road map:
+<ul>
+<li>Familiarize yourself with [1,2,3] and shogun (in particular CKernelMachine and CDotFleatures).</li>
+<li>Familiarize yourself with random fourier features [2] via RandomFourierDotFeatures in shogun/features/ and RandomFourierGaussPreproc.cpp in shogun/preprocessor.</li>
+<li>Familiarize yourself with the Fast Hadamard transform and its implementation [6].</li>
+<li>Familiarize with [3,4,5] and implement the FastFood method. Implement a speed comparison of [1,2,3].</li>
+</ul>
+<br />
+
+References:<br />
+[1] Efficient Additive Kernels via Explicit Feature Maps (Vedaldi, 2011)<br />
+[2] <a href="https://research.microsoft.com/apps/video/dl.aspx?id=103390&l=i">Random kitchen sinks.</a><br />
+[3] <a href="http://jmlr.org/proceedings/papers/v28/le13.html">Fastfood - Computing Hilbert Space Expansions in loglinear time, Quoc Le, Tamas Sarlos, Alexander Smola; JMLR W&CP 28 (3): 244–252, 2013</a><br />
+[4] <a href="http://videolectures.net/nipsworkshops2012_smola_kernel">Fast Food video lecture.</a><br />
+[5] <a href="http://techtalks.tv/talks/fastfood-computing-hilbert-space-expansions-in-loglinear-time/58385/">Fast Food techtalk</a><br />
+[6] <a href"http://spiral.net/software/wht.html">SPIRAL WHT Package.</a>
 </p>
 </li>
