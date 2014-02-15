@@ -275,3 +275,45 @@ References:<br />
 	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br />
 	[3] <a href="http://www.icml-2011.org/papers/54_icmlpaper.pdf ">F. Dinuzzo, C. S. Ong, P. Gehler, and G. Pillonetto. Learning output kernels with block coordinate descent. In International Conference on Machine Learning, Bellevue WA (USA), 2011.</a><br />
 </li>
+
+<!-- VARIABLE INTERACTIONS PROJECT IDEA -->
+<li>
+	<h4 id="variable_interactions">Testing and Measuring Variable Interactions With Kernels</h4>
+	<!-- Project generics -->
+	<i>Mentor: Dino Sejdinovic</i><br />
+	<i>Shogun co-mentor: Heiko Strathmann</i><br />
+	<i>Difficulty: <spanc class="difficult">Difficult</span></i><br />
+	<i>Requirenemtns: Strong C++ skills, basic knowledge of kernel methods and hypothesis testing</i><br />
+	<i>Useful: matlab, python, eigen3</i><br/>
+	<!-- Project description -->
+	<p align="justify">
+		Testing and measuring dependence between paired data observations is a fundamental scientific task, and is often an important part of the feature selection procedure needed for a more sophisticated ML problem. In recent years, a significant progress was made in both the machine learning and the statistics community in order to capture non-linear associations, and to extend the formalism, via kernel trick, to datasets that belong to more complex, structured domains, like strings or graphs. The aim of this project is to extend Shogun’s modular implementation of these novel dependence measures and make it applicable to generic data domains. In addition, the corresponding feature selection procedures will be implemented and integrated into Shogun’s data preprocessing framework. The project builds on the GSoC 2012 project on kernel methods for two-sample testing [8].<br/><br/>
+
+		This will be an exciting opportunity to acquire intimate knowledge of cutting-edge kernel techniques, with a large number of potential users from different scientific fields. While *basic* understanding of the involved concepts is crucial, it is not required that you understand all methods in detail. We will provide a detailed description of all involved algorithms along with working implementations and help you on the way.<br/><br/>
+
+		Suggested road map:<br/>
+		<ul>
+		<li>Review and enhance Hilbert/Schmidt Independence Criterion (HSIC) [1] and distance correlation/covariance [2] (two dependence measures </li>belonging to the same kernel-based framework) – allowing the user to specify either the kernel or the metric needed to compute the quantities in a modular fashion
+		<li>Implement a measure of multivariate (higher-order) interaction [3]</li>
+		<li>Implement normalized HSIC/NOCCO [4] and the copula-based kernel-dependence 	measure [5]</li>
+		<li>Implement conditional variants of each of the above quantities [4] (optional)</li>
+		<li>Review and enhance the Shogun class for the statistical significance tests based on the corresponding dependence measures as the test </li>statistics, using several additional approaches to approximate the statistic distribution under the null hypothesis, for example [9] 	
+		<li>Implement automated selection of the parameters corresponding to each of the dependence measures that result in the most powerful test, </li>following 	the approach in [6] (this would build on the existing framework for two-sample testing)	
+		<li>Implement a Shogun class for the feature selection procedures(e.g., [7]) that would based on the corresponding dependence measures, to be </li>added to the Shogun preprocessing framework
+		<li>Detailed iPython worked examples for the assessment of testing performance and the feature selection performance -- these will include a </li>big data problem with millions of data points. 
+		<li>API illustration via mini-examples in both C++ and at least two modular language bindings.</li>
+		</ul>
+		<br/>
+
+		References:<br/>
+		[1] A. Gretton, K. Fukumizu, C.H. Teo, L. Song, B. Scholkopf and A. Smola, A kernel statistical test of independence. In Advances in Neural Information Processing Systems (NIPS), 2008.<br/>
+		[2] G. Szekely and M. Rizzo, Brownian distance covariance. Ann. Appl. Stat. 3 1236– 1265, 2009<br/>
+		[3] D. Sejdinovic, A. Gretton and W. Bergsma, A kernel test for three-variable interactions, in Advances in Neural Information Processing Systems (NIPS), 2013.<br/>
+		[4] K. Fukumizu, A. Gretton, X. Sun, and B. Scholkopf, Kernel Measures of Conditional Dependence. Advances in Neural Information Processing Systems, 2008.<br/>
+		[5] B. Poczos, Z. Ghahramani, and J. Schneider, Copula-based Kernel Dependency Measures, International Conference on Machine Learning (ICML), 2012.<br/>
+		[6] A. Gretton, B. Sriperumbudur, D. Sejdinovic, H. Strathmann, S. Balakrishnan, M. Pontil and K. Fukumizu, Optimal kernel choice for large-scale two-sample tests, in Advances in Neural Information Processing Systems (NIPS), 2012.<br/>
+		[7] L. Song, A. Smola, A. Gretton, J. Bedo, and K. Borgwardt, Feature Selection via Dependence Maximization, J. Mach. Learn. Res. 13:1393−1434, 2012.<br/>
+		[8] <a href="http://www.shogun-toolbox.org/page/Events/gsoc2012_follow_up">GSoC 2012 follow-up</a> and <a href="http://www.shogun-toolbox.org/doc/en/3.0.0/classshogun_1_1CTestStatistic.html">CTestStatistic in Shogun's documentation</a>.<br/>
+		[9] W. Zaremba, A. Gretton, and M. Blaschko, B-test: A Non-parametric, Low Variance Kernel Two-sample Test.  In Advances in Neural Information Processing Systems (NIPS), 2013.
+	</p>
+</li>
