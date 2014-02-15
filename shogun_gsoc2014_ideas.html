@@ -192,7 +192,7 @@ N. Görnitz, A. Porbadnigk, A. Binder, C. Sannelli, M. Braun, K.-R. Mueller, M. 
 <!-- Project generics -->
 <i>Mentor:  Andreas Ziehe</i><br />
 <i>Shogun co-mentor: Soeren Sonnenburg</i><br />
-<i>Difficulty: <span class="medium">Medium</span></i><br /> to <span class="difficult">Difficult</span></i><br />
+<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br />
 <i>Requirements: C++, machine learning, linear algebra</i><br />
 <!-- Project description -->
 <p align="justify">
@@ -215,4 +215,45 @@ References:<br />
 [5] <a href="http://techtalks.tv/talks/fastfood-computing-hilbert-space-expansions-in-loglinear-time/58385/">Fast Food techtalk</a><br />
 [6] <a href"http://spiral.net/software/wht.html">SPIRAL WHT Package.</a>
 </p>
+</li>
+
+<!-- MCMC PROJECT IDEA -->
+<li>
+	<h4 id="mcmc">Generic Framework for Markov Chain Monte Carlo Algorithms and Stan Interface</h4>
+	<!-- Project generics -->
+	<i>Mentors: Theodore Papamarkou, Dino Sejdinovic</i><br />
+	<i>Shogun co-mentor: Heiko Strathmann</i><br />
+	<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i>
+	<i>Requirements: C++, basic understanding of Monte Carlo methods</i><br />
+	<i>Useful: Stan, Shogun’s GP framework, experience with Hamiltonian Monte Carlo</i><br />
+	<!-- Project description -->
+	<p align="justify">
+	Monte Carlo methods are used for Bayesian statistical analysis in various disciplines, including machine learning. For this reason, several statistical methods coded in some of Shogun’s existing toolboxes require interacting with Monte Carlo samplers. An example of this is fully Bayesian GP classification that requires sampling from the posterior of the GP hyperparameters. The aim of this project is to provide a coding framework for Monte Carlo sampling in Shogun. Other sub-parts in Shogun will be able to use this framework in order to either call Monte Carlo samplers already available in the framework or code new samplers by complying to the framework’s unified API. The fully modular framework would allow both the adaptive and the non-adaptive MCMC methods, and an easy addition of the novel adaptation procedures, such as Kameleon MCMC [3]. In addition, pseudo-marginal MCMC (based on [1]) will be included. Main application would be in the use of MCMC methods for Gaussian Process Classification, building on two previous GSoC projects on GPs.<br /><br />
+
+	The project entails the following sequential steps:
+	<ul>
+	<li>The major goal of the project would be to organize the infrastructure of the MCMC framework in a way that
+		<ul>
+		<li>compartmentalizes its components so as to enhance future code usage and development,</li>
+		<li>organizes the existing map of Monte Carlo samplers in a natural way,</li>
+		<li>facilitates interaction with external Monte Carlo libraries.</li>
+		</ul>
+	</li>
+	<li>The designed framework will then be coded as a standalone Shogun toolbox, serving
+		<ul>
+		<li>as a Monte Carlo API for Shogun developers,</li>
+		<li>as a toolbox with its own MCMC samplers.</li>
+		</ul>
+	</li>
+	<li>The final stage will involve using the coded API to code an interface for Stan in Shogun. This last step is provisional and its progress will depend on the timeline of the previous two steps and on the technicalities arising from Stan’s coding infrastructure. Ideally, Stan’s interface in Shogun will be developed, yet if technical issues hinder timely development, then minimally a plan will provided outlining how future development will tackle the task.</li>
+	</ul>
+	<br />
+
+	The framework has been already partially conceptualized and documented using a UML graph, see [2]. A Python prototype has also been coded to implement the UML graph, see [2]. This preparatory work will ease the completion of step 1, shifting the focus to step 2. You will play a key role in the initial step of the long-term effort to extend functionalities offered by Shogun, and to build a bridge between toolsets used by the Statistics and ML practitioners. This would potentially have a large impact in terms of usage, as MCMC methods are a ubiquitous tool in a variety of scientific disciplines. Solid understanding of MCMC is crucial, however it is not required that you understand all sophisticated methods in detail yet. We will provide a detailed description of all involved algorithms along with working implementations and help you on the way.<br /><br />
+
+	References:<br />
+	[1] <a href="http://www.shogun-toolbox.org/doc/en/3.0.0/classshogun_1_1CInferenceMethod.html#a6e4c3c79df2e7dbb33a0cd9d392dbc6b.">CInferenceMethod in Shogun's Doxygen documentation.</a><br />
+	[2] <a href="https://github.com/karlnapf/shogun-mcmc-prototype">Shogun MCMC prototype</a>, in particular the UML diagram.<br />
+	[3] <a href="http://arxiv.org/abs/1307.5302">D. Sejdinovic, M. Lomeli Garcia, H. Strathmann, C. Andrieu and A. Gretton, Kernel adaptive Metropolis-Hastings</a>, working implementation at <a href="https://github.com/karlnapf/kameleon-mcmc">GitHub</a>.
+	</p>
 </li>
