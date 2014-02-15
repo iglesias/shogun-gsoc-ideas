@@ -54,8 +54,8 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 	<li><a href="#mcmc">Generic Framework for Markov Chain Monte Carlo Algorithms and Stan Interface</a> </li>
 	<li><a href="#okl">Output Kernel Learning</a> </li>
 	<li><a href="#variable_interactions">Testing and Measuring Variable Interactions with Kernels</a> </li>
-	<li><a href="#dictionary_learning"></a>Dictionary learning</li>
-	<li><a href="#lpqp"></a>LP/QP Optimization Framework</li>
+	<li><a href="#dictionary_learning">Dictionary learning</a></li>
+	<li><a href="#lpqp">LP/QP Optimization Framework</a></li>
 	<li><a href="#multilabel">Large-Scale (hierarchical) Multi-Label Classification</a> </li>
 	<li><a href="#sosvm">Implement dual coordinate solver for Structured Output SVMs</a> </li>
 	</ul>
@@ -347,56 +347,42 @@ References:<br />
 
 <!-- LPQP PROJECT IDEA -->
 <li>
-	<h4 id="okl">Output Kernel Learning</h4>
+	<h4 id="lpqp">LP/QP Optimization Framework</h4>
 	<!-- Project generics -->
-	<i>Mentor: Cheng Soon Ong</i><br />
-	<i>Shogun co-mentor: Sergey Lisitsyn</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: C++, linear algebra</i><br />
+	<i>Mentor: Viktor Gal</i><br />
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br />
+	<i>Requirements: optimization theory, good c++ skills</i><br />
+	<i>Useful: opencl/cuda knowledge</i><br />
 	<!-- Project description -->
 	<p align="justify">
-	In this task a student would work on implementations of a few algorithms for output kernel learning. Output kernel learning is a kernel-based technology to solve learning problems with multiple outputs, such as multi-class and multi-label classification or vectorial regression while automatically learning the relationships between the different output components. This idea is mainly about implementing the algorithm with proper testing routines and gives student a great opportunity to work on state-of-the-art machine learning algorithms and problem formulations.<br /><br />
-	
-	References:<br />
-	[1] <a href="http://www.sciencedirect.com/science/article/pii/S0925231213003135">F. Dinuzzo. Learning output kernels for multi-task problems. Neurocomputing, 118:119-126, 2013.</a><br />
-	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br />
-	[3] <a href="http://www.icml-2011.org/papers/54_icmlpaper.pdf ">F. Dinuzzo, C. S. Ong, P. Gehler, and G. Pillonetto. Learning output kernels with block coordinate descent. In International Conference on Machine Learning, Bellevue WA (USA), 2011.</a><br />
+	This task considers implementation of a framework for LP/QP optimization within Shogun. It shall be as modular as possible, since we want to have a general KKT solver as well as part of this project. The framework would be a thin wrapper that defines mappings for several existing and known optimization libraries (libqp, mosek, glpk, cplex, etc.). Using this framework implement a cone programming (both LP and QP).
+	</p>
 </li>
 
 <!-- MULTILABEL PROJECT IDEA -->
 <li>
-	<h4 id="okl">Output Kernel Learning</h4>
+	<h4 id="multilabel">Large-Scale (hierarchical) Multi-Label Classification</h4>
 	<!-- Project generics -->
-	<i>Mentor: Cheng Soon Ong</i><br />
-	<i>Shogun co-mentor: Sergey Lisitsyn</i><br />
+	<i>Mentor: Thoralf Klein</i><br />
 	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: C++, linear algebra</i><br />
+	<i>Requirements: multi-label theory, structured-output learning, good c++ skills</i><br />
 	<!-- Project description -->
 	<p align="justify">
-	In this task a student would work on implementations of a few algorithms for output kernel learning. Output kernel learning is a kernel-based technology to solve learning problems with multiple outputs, such as multi-class and multi-label classification or vectorial regression while automatically learning the relationships between the different output components. This idea is mainly about implementing the algorithm with proper testing routines and gives student a great opportunity to work on state-of-the-art machine learning algorithms and problem formulations.<br /><br />
-	
-	References:<br />
-	[1] <a href="http://www.sciencedirect.com/science/article/pii/S0925231213003135">F. Dinuzzo. Learning output kernels for multi-task problems. Neurocomputing, 118:119-126, 2013.</a><br />
-	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br />
-	[3] <a href="http://www.icml-2011.org/papers/54_icmlpaper.pdf ">F. Dinuzzo, C. S. Ong, P. Gehler, and G. Pillonetto. Learning output kernels with block coordinate descent. In International Conference on Machine Learning, Bellevue WA (USA), 2011.</a><br />
+	Implement models to perform large-scale (hierarchical) multi-label classification using Shogun.  This could be done using the structured-output learning framework, or by implementing custom multi-label classifiers. Dealing with multi-label outputs with 1000 or more classes per instance is not trivial in Shogun: Parts of the code base are not prepared for this and do not scale well. Thus, one major task will be optimizing of streamlining Shogun’s infrastructure for (memory-) efficient training in these settings.
+	</p>
 </li>
 
 <!-- SOSVM PROJECT IDEA -->
 <li>
-	<h4 id="okl">Output Kernel Learning</h4>
+	<h4 id="sosvm">Implement dual coordinate solver for Structured Output SVMs</h4>
 	<!-- Project generics -->
-	<i>Mentor: Cheng Soon Ong</i><br />
-	<i>Shogun co-mentor: Sergey Lisitsyn</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: C++, linear algebra</i><br />
+	<i>Mentor: Vojtech Franc</i><br />
+	<i>Mentor: Soeren Sonnenburg</i><br />
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br />
+	<i>Requirements: optimization theory, C++</i><br />
 	<!-- Project description -->
 	<p align="justify">
-	In this task a student would work on implementations of a few algorithms for output kernel learning. Output kernel learning is a kernel-based technology to solve learning problems with multiple outputs, such as multi-class and multi-label classification or vectorial regression while automatically learning the relationships between the different output components. This idea is mainly about implementing the algorithm with proper testing routines and gives student a great opportunity to work on state-of-the-art machine learning algorithms and problem formulations.<br /><br />
-	
-	References:<br />
-	[1] <a href="http://www.sciencedirect.com/science/article/pii/S0925231213003135">F. Dinuzzo. Learning output kernels for multi-task problems. Neurocomputing, 118:119-126, 2013.</a><br />
-	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br />
-	[3] <a href="http://www.icml-2011.org/papers/54_icmlpaper.pdf ">F. Dinuzzo, C. S. Ong, P. Gehler, and G. Pillonetto. Learning output kernels with block coordinate descent. In International Conference on Machine Learning, Bellevue WA (USA), 2011.</a><br />
+	This task considers the implementation of a recently proposed dual coordinate solver (link will come soon; paper is under review) which uses the WSS2 strategy known from two-class LIBSVM to structured output setting. This is an opportunity to learn a lot about numeric optimization algorithms and structured output task formulations.
 </li>
 </td>
 </tr>
