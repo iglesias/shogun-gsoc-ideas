@@ -65,7 +65,7 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 	<td class="ideas2" width="100%">
 	<h4>Infrastructure improvements</h4>
 	<ul>
-	<li><a href="#svm_bright">SVM^light as MIT license rewrite</a></li>
+	<li><a href="#svmbright">SVM^light as MIT license rewrite</a></li>
 	<li><a href="#opencv">OpenCV Integration and Computer Vision Applications</a></li>
 	<li><a href="#plugin">Implement a framework for plugin-based architecture</a></li>
 	<li><a href="#model_selection">Implement an easy to use model selection API</a> </li>
@@ -393,20 +393,19 @@ References:<br />
 
 <!-- SVM^bright PROJECT IDEA -->
 <li>
-	<h4 id="okl">Output Kernel Learning</h4>
+	<h4 id="svmbright">SVMbright - SVM^light as MIT license rewrite</h4>
 	<!-- Project generics -->
-	<i>Mentor: Cheng Soon Ong</i><br />
-	<i>Shogun co-mentor: Sergey Lisitsyn</i><br />
-	<i>Difficulty: <span class="medium">Medium</span></i><br />
-	<i>Requirements: C++, linear algebra</i><br />
+	<i>Mentor: Björn Esser</i><br />
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br />
+	<i>Requirements: C++(11) programming, support vector machines, optimization theory</i><br />
 	<!-- Project description -->
 	<p align="justify">
-	In this task a student would work on implementations of a few algorithms for output kernel learning. Output kernel learning is a kernel-based technology to solve learning problems with multiple outputs, such as multi-class and multi-label classification or vectorial regression while automatically learning the relationships between the different output components. This idea is mainly about implementing the algorithm with proper testing routines and gives student a great opportunity to work on state-of-the-art machine learning algorithms and problem formulations.<br /><br />
-	
-	References:<br />
-	[1] <a href="http://www.sciencedirect.com/science/article/pii/S0925231213003135">F. Dinuzzo. Learning output kernels for multi-task problems. Neurocomputing, 118:119-126, 2013.</a><br />
-	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br />
-	[3] <a href="http://www.icml-2011.org/papers/54_icmlpaper.pdf ">F. Dinuzzo, C. S. Ong, P. Gehler, and G. Pillonetto. Learning output kernels with block coordinate descent. In International Conference on Machine Learning, Bellevue WA (USA), 2011.</a><br />
+	<a href="http://svmlight.joachims.org/">SVMlight</a> is one of the first and the most advanced SVM solvers. While efficient, it is not open source. This idea is about implementing the algorithms described in <a href="http://www.cs.cornell.edu/people/tj/publications/joachims_98c.pdf ">Joachims 98</a> as free, MIT-style licensed software.<br/><br/>
+
+	Goals:<br/>
+	Creating an easy to use / integrate modular SVM-framework, which is flexible and easy to extend / enhance by writing new plugins for different solvers, kernel, algorithms / implementations, IO-drivers for different data / models with nice and stable callback API and replace the existing 
+	inlined SVMlight in Shogun with that.
+	</p>
 </li>
 
 <!-- OpenCV PROJECT IDEA -->
