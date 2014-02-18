@@ -1,5 +1,3 @@
-<p><i>If you are just interested in reading the project ideas, scroll down this page. However, we really encourage you to read this FAQ first if you want to become a GSoC student with Shogun!</i></p>
-
 <p align="justify">Welcome to our ideas page for Google Summer of Code 2014! We are looking for you: After our successful participation in the last three GSoC, we want to take Shogun up another notch with your help. So
  - if you are interested in Machine Learning (ML), Statistics, Optimization, or just C++ coding,
  - if you enjoy working with a vibrant team of experienced Machine Learning scientists,
@@ -25,22 +23,23 @@ As already mentioned above, you have to commit us of your excitement about Shogu
 GSoC is a fulltime job (40h/week)! While it is not important where you work, we expect students to hand in code every week at least, so you should work on your project continuously. We also encourage you to stick around in IRC in order to help each other, get involved with the community, and to share the fun. In addition, preparing the GSoC requires quite a bit of time and effort: preparing your application, get involved in Shogun development before the deadline, reading about project details etc.</p>
 
 <p align="justify"><b>Our Expectations</b> - <i>&ldquo;What you have to deliver&rdquo;</i><br/>
-All code that you write is directly merged into our development branch as we want to avoid you building a separate branch that nobody else sees. This means you will get feedback for every pull request you send us - lots of room for discussion! New code might break existing unit/integration tests. This is checked via travis [10], which is a web-service that checks your pull request for C++ compile errors and broken unit tests before merging, and our buildbot farm [11], which, after merging, compiles Shogun under a large variety of configurations and operating systems, and finally runs every test. We expect you to keep our tests green. We expect you to provide unit tests for all the code you write. We also expect you to write C++ and python_modular (aka integration test) mini-examples that demonstrate the API.<br/>
+All code that you write is directly merged into our development branch as we want to avoid you building a separate branch that nobody else sees. This means you will get feedback for every pull request you send us - lots of room for discussion! New code might break existing unit/integration tests. This is checked via travis [10], which is a web-service that checks your pull request for C++ compile errors and broken unit tests before merging, and our buildbot farm [11], which, after merging, compiles Shogun under a large variety of configurations and operating systems, and finally runs every test. We expect you to keep our tests green. We expect you to provide unit tests for all the code you write. We also expect you to write C++ and python_modular (aka integration test) mini-examples that demonstrate the API.<br/><br/>
 In addition, a big part of every GSoC project with us is a final report in the form of an IPython notebook, have a look at the previous ones at [7]. Plan the final two weeks as time to write this notebook - it is the most visible part of your project and therefore it should receive a lot of love.
 Finally, we plan a peer-review from our students at the end of GSoC. That means you will review one other student’s code with respect to (interface) documentation, usability, and bugs - and he/she will do the same with your work. In the optimal case, you write an example or notebook extension for each other.
 </p>
 
 <p align="justify"><b>Shogun development cycle in a nutshell</b> - <i>&ldquo;How to get my code into Shogun&rdquo;</i><br/>
-Here is a very basic list of things how to get started hacking Shogun. It requires some basic knowledge about Git(Hub), for which you can easily find help online.
-1. Register on GitHub.
-2. Fork the shogun repository.
-3. Clone your fork locally, add the orignal (our) repository as upstream (in order to rebase your clone). Create a develop branch locally and rebase it against the upstream. For example using git pull --rebase upstream develop
-4. Create a new feature branch locally, work (and commit your work) in there. When done, merge this (possibly with the squash option) to your local develop branch. If you want, use Git flow (search in the archives of our mailing list for more information about how we are using Git flow).
-5. Push the changes to your fork on github.
-6. Send a pull request against the development branch of the original Shogun repository.
-7. We hope you did not forget to write a unit test for your changes (or tell us why there is no need).
-8.  Every pull request will trigger travis to compile and run tests on your branch, see [10]. If those are all green, someone of the core-developers will merge after giving feedback. Feedback usually takes a few iterations of you changing things and us commenting in the beginning.
-9. Goto 4.</p>
+Here is a very basic list of things how to get started hacking Shogun. It requires some basic knowledge about Git(Hub), for which you can easily find help online.<br/><br/>
+1. Register on GitHub.<br/>
+2. Fork the shogun repository.<br/>
+3. Clone your fork locally, add the orignal (our) repository as upstream (in order to rebase your clone). Create a develop branch locally and rebase it against the upstream. For example using git pull --rebase upstream develop.<br/>
+4. Create a new feature branch locally, work (and commit your work) in there. When done, merge this (possibly with the squash option) to your local develop branch. If you want, use Git flow (search in the archives of our mailing list for more information about how we are using Git flow).<br/>
+5. Push the changes to your fork on github.<br/>
+6. Send a pull request against the development branch of the original Shogun repository.<br/>
+7. We hope you did not forget to write a unit test for your changes (or tell us why there is no need).<br/>
+8.  Every pull request will trigger travis to compile and run tests on your branch, see [10]. If those are all green, someone of the core-developers will merge after giving feedback. Feedback usually takes a few iterations of you changing things and us commenting in the beginning.<br/>
+9. Goto 4.
+</p>
 
 <p>
 [1] <a href="https://github.com/shogun-toolbox/shogun/tree/develop"> Develop branch</a>.<br/>
