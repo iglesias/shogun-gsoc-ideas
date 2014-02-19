@@ -68,6 +68,7 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 	<li><a href="#opencv">OpenCV Integration and Computer Vision Applications</a></li>
 	<li><a href="#plugin">Implement a framework for plugin-based architecture</a></li>
 	<li><a href="#model_selection">Implement an easy to use model selection API</a></li>
+	<li><a href="#independent_jobs"></a>Independent jobs Framework</li>
 	<li><a href="#meta_language">A Meta-Language for Shogun Examples</a></li>
 	</ul>
 	</td>
@@ -438,6 +439,43 @@ References:<br/>
 	The Shogun’s model selection framework is a powerful tool to select parameters. Although it lacks some user friendly syntax and is overly verbose. This idea considers endeavour of re-designing the model selection framework to be much more easy to use. The student assigned for this project would learn how to design cross-language APIs.
 	</p>
 </li>
+
+<!-- Independent Jobs Framework IDEA -->
+<li>
+	<h4 id="independent_jobs">Independent jobs Framework</h4>
+	<!-- Project generics -->
+	<i>Mentors: Viktor (email: vigsterkr at gmail.com, irc wiking)</i><br/>
+	<i>Difficulty: <span class="difficult">Difficult</span></i><br/>
+	<i>Requirements: distributed computing, openmp, c++, hadoop, spark</i><br/>
+	<!-- Project description -->
+	<p align="justify">
+	Although Shogun has a huge selection of ML algorithms currently it lacks support for parallel processing, i.e.
+	running these algorithm using multiple cores or multiple nodes in a cluster.
+	
+	Last year, as part of a GSoC project an <i>Independent Computing Framework</i> has been introduced
+	to Shogun, but it has been applied in handful of algorithms. Hence one of the objective of this
+	task would be to intruduce the framework to other algorithms in Shogun that could benefit from using
+	parallel processing.
+	
+	The main objective of this project would be to unify the way parallel processing is being done within the library as 
+	currently there are algorithms in Shogun that are using OpenMP and others that are using native POSIX pthreads API
+	to do parallel processing. The way this should be done is to define a unified <i>parallel processing</i> API,
+	which supports both multi-core and multi-node distributed computing. A good example for this is 
+	<a href="https://spark.incubator.apache.org/">Spark</a> where an environmental variable (MASTER) defines
+	whether the tasks are being run on a cluster or different cores of a local machine. Apart from this the API
+	should as well define basic operations like <i>parallel loop</i>.
+	
+	Ideally the implemented API should be accessible from the modular interfaces as well.
+	
+	It is important that the framework should support to use it over well known distributed computing frameworks, like
+	<ul>
+		<li><a href="http://mesos.apache.org/">Apache Mesos</a></li>
+		<li><a href="https://spark.incubator.apache.org/">Spark</a></li>
+		<li><a href="http://hadoop.apache.org/"></a>Apache Hadoop</li>
+	</ul>
+	</p>
+</li>
+
 
 <!-- META-LANGUAGE PROJECT IDEA -->
 <li>
