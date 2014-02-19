@@ -68,7 +68,9 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 	<li><a href="#opencv">OpenCV Integration and Computer Vision Applications</a></li>
 	<li><a href="#plugin">Implement a framework for plugin-based architecture</a></li>
 	<li><a href="#model_selection">Implement an easy to use model selection API</a></li>
-	<li><a href="#independent_jobs"></a>Independent jobs Framework</li>
+	<li><a href="#independent_jobs">Independent jobs Framework</a></li>
+	<li><a href="#cloud">Shogun cloud extensions</a></li>
+	<li><a href="#windows">Native MS Windows port</a></li>
 	<li><a href="#meta_language">A Meta-Language for Shogun Examples</a></li>
 	</ul>
 	</td>
@@ -278,7 +280,7 @@ References:<br/>
 	<!-- Project description -->
 	<p align="justify">
 	In this task a student would work on implementations of a few algorithms for output kernel learning. Output kernel learning is a kernel-based technology to solve learning problems with multiple outputs, such as multi-class and multi-label classification or vectorial regression while automatically learning the relationships between the different output components. This idea is mainly about implementing the algorithm with proper testing routines and gives student a great opportunity to work on state-of-the-art machine learning algorithms and problem formulations.<br/><br/>
-	
+
 	References:<br/>
 	[1] <a href="http://www.sciencedirect.com/science/article/pii/S0925231213003135">F. Dinuzzo. Learning output kernels for multi-task problems. Neurocomputing, 118:119-126, 2013.</a><br/>
 	[2] <a href="http://jmlr.csail.mit.edu/proceedings/papers/v20/dinuzzo11/dinuzzo11.pdf">F. Dinuzzo, and K. Fukumizu. Learning low-rank output kernels. JMLR: Workshop and Conference Proceedings. Proceedings of the 3rd Asian Conference on Machine Learning. 20:181–196, Taoyuan, Taiwan, 2011.</a><br/>
@@ -306,10 +308,10 @@ References:<br/>
 		<li>Implement a measure of multivariate (higher-order) interaction [3]</li>
 		<li>Implement normalized HSIC/NOCCO [4] and the copula-based kernel-dependence 	measure [5]</li>
 		<li>Implement conditional variants of each of the above quantities [4] (optional)</li>
-		<li>Review and enhance the Shogun class for the statistical significance tests based on the corresponding dependence measures as the test </li>statistics, using several additional approaches to approximate the statistic distribution under the null hypothesis, for example [9] 	
-		<li>Implement automated selection of the parameters corresponding to each of the dependence measures that result in the most powerful test, </li>following 	the approach in [6] (this would build on the existing framework for two-sample testing)	
+		<li>Review and enhance the Shogun class for the statistical significance tests based on the corresponding dependence measures as the test </li>statistics, using several additional approaches to approximate the statistic distribution under the null hypothesis, for example [9]
+		<li>Implement automated selection of the parameters corresponding to each of the dependence measures that result in the most powerful test, </li>following 	the approach in [6] (this would build on the existing framework for two-sample testing)
 		<li>Implement a Shogun class for the feature selection procedures(e.g., [7]) that would based on the corresponding dependence measures, to be </li>added to the Shogun preprocessing framework
-		<li>Detailed iPython worked examples for the assessment of testing performance and the feature selection performance -- these will include a </li>big data problem with millions of data points. 
+		<li>Detailed iPython worked examples for the assessment of testing performance and the feature selection performance -- these will include a </li>big data problem with millions of data points.
 		<li>API illustration via mini-examples in both C++ and at least two modular language bindings.</li>
 		</ul>
 
@@ -334,7 +336,7 @@ References:<br/>
 	<i>Requirements: C++, Python</i><br/>
 	<!-- Project description -->
 	<p align="justify">
-	Dictionary learning is an optimization approach to avoid feature engineering in machine learning. This task is a great opportunity to learn basics of dictionary learning and gradually reach state-of-the-art techniques relevant in various machine learning applications. 
+	Dictionary learning is an optimization approach to avoid feature engineering in machine learning. This task is a great opportunity to learn basics of dictionary learning and gradually reach state-of-the-art techniques relevant in various machine learning applications.
 	</p>
 </li>
 
@@ -396,7 +398,7 @@ References:<br/>
 	<a href="http://svmlight.joachims.org/">SVMlight</a> is one of the first and the most advanced SVM solvers. While efficient, it is not open source. This idea is about implementing the algorithms described in <a href="http://www.cs.cornell.edu/people/tj/publications/joachims_98c.pdf ">Joachims 98</a> as free, MIT-style licensed software.<br/><br/>
 
 	Goals:<br/>
-	Creating an easy to use / integrate modular SVM-framework, which is flexible and easy to extend / enhance by writing new plugins for different solvers, kernel, algorithms / implementations, IO-drivers for different data / models with nice and stable callback API and replace the existing 
+	Creating an easy to use / integrate modular SVM-framework, which is flexible and easy to extend / enhance by writing new plugins for different solvers, kernel, algorithms / implementations, IO-drivers for different data / models with nice and stable callback API and replace the existing
 	inlined SVMlight in Shogun with that.
 	</p>
 </li>
@@ -450,32 +452,77 @@ References:<br/>
 	<!-- Project description -->
 	<p align="justify">
 	Although Shogun has a huge selection of ML algorithms currently it lacks support for parallel processing, i.e.
-	running these algorithm using multiple cores or multiple nodes in a cluster.
-	
+	running these algorithm using multiple cores or multiple nodes in a cluster.<br/><br/>
+
 	Last year, as part of a GSoC project an <i>Independent Computing Framework</i> has been introduced
 	to Shogun, but it has been applied in handful of algorithms. Hence one of the objective of this
-	task would be to intruduce the framework to other algorithms in Shogun that could benefit from using
-	parallel processing.
-	
-	The main objective of this project would be to unify the way parallel processing is being done within the library as 
+	task would be to introduce the framework to other algorithms in Shogun that could benefit from using
+	parallel processing.<br/><br/>
+
+	The main objective of this project would be to unify the way parallel processing is being done within the library as
 	currently there are algorithms in Shogun that are using OpenMP and others that are using native POSIX pthreads API
 	to do parallel processing. The way this should be done is to define a unified <i>parallel processing</i> API,
-	which supports both multi-core and multi-node distributed computing. A good example for this is 
+	which supports both multi-core and multi-node distributed computing. A good example for this is
 	<a href="https://spark.incubator.apache.org/">Spark</a> where an environmental variable (MASTER) defines
 	whether the tasks are being run on a cluster or different cores of a local machine. Apart from this the API
-	should as well define basic operations like <i>parallel loop</i>.
-	
-	Ideally the implemented API should be accessible from the modular interfaces as well.
-	
+	should as well define basic operations like <i>parallel loop</i>.<br/><br/>
+
+	Ideally the implemented API should be accessible from the modular interfaces as well.<br/><br/>
+
 	It is important that the framework should support to use it over well known distributed computing frameworks, like
 	<ul>
 		<li><a href="http://mesos.apache.org/">Apache Mesos</a></li>
 		<li><a href="https://spark.incubator.apache.org/">Spark</a></li>
-		<li><a href="http://hadoop.apache.org/"></a>Apache Hadoop</li>
+		<li><a href="http://hadoop.apache.org/">Apache Hadoop</a></li>
 	</ul>
 	</p>
 </li>
 
+<!-- Shogun cloud extension IDEA -->
+<li>
+	<h4 id="cloud">Shogun cloud extensions</h4>
+	<!-- Project generics -->
+	<i>Mentors: Viktor (email: vigsterkr at gmail.com, irc wiking)</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: distributed computing, python, docker</i><br/>
+	<!-- Project description -->
+	<p align="justify">
+	<a href="http://cloud.shogun-toolbox.org/">Cloud</a> service of Shogun was introduced with
+	release 3.0. It is basically a simple Flask application that serves
+	<a href="http://docker.io/">docker</a> containers with Shogun and python modular interface
+	with IPython server in it for the users. The code is available
+	<a href="https://github.com/shogun-toolbox/shogun-cloud">here</a>.<br/><br/>
+
+	There are several issue (extensions) one would need to solve during this task
+	<ul>
+		<li>auto-update docker containers of the users to the latest shogun docker image</li>
+		<li>tunnel using session keys the IPython notebook via the http server instead of revealing the service directly.</li>
+		<li>create a frontend-backend setup, where the <b>frontend</b> node is only responsible for authenticating and registering the users and to optimally allocate resources among the <b>backend</b> servers who are responsible to run the docker containers.</li>
+	</ul>
+	</p>
+</li>
+
+<!-- Native windows port IDEA -->
+<li>
+	<h4 id="windows">Native MS Windows port</h4>
+	<!-- Project generics -->
+	<i>Mentors: Viktor (email: vigsterkr at gmail.com, irc wiking)</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: visual c++</i><br/>
+	<!-- Project description -->
+	<p align="justify">
+	Shogun is missing native MS Windows port. Because of this we are missing a big user base
+	as there's still a lot of researchers and developers who use MS Windows primarily.<br/><br/>
+
+	Currently the only way to compile Shogun in a MS Windows environment is to use
+	CygWin. Although with the help of CMake one can generate an MS Visual Studio solution file,
+	the code in current state cannot be compiled with Visual C++. I have started to work on this
+	task, but a lot of macros are still required to be able to compile Shogun with VC++.<br/><br/>
+
+	Although it does not sound like a major task, it is, because one has to take care of all
+	the little things of MS VC++ that makes it a not-so standard C++ compiler.
+	</p>
+</li>
 
 <!-- META-LANGUAGE PROJECT IDEA -->
 <li>
