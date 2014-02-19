@@ -456,7 +456,7 @@ References:<br/>
 	Part 1: <b>A Shogun example language</b><br/>
 	The first step is to come up with an abstract language that is able to represent Shogun objects, and basic data types, and method calls on Shogun objects. A purely sequential structure is sufficient: programs will just be ordered lists of statements. This makes it relatively easy to map these commands to the modular target languages. There are many issues to deal with here: syntactic structure, representation of programs, operators, etc, so this is a theoretic part. A good start will be to just write programs in a language how we would like it to be and then see whether its possible to generalize over this.<br/><br/>
 
-	Part 2: <b>A Shogun example language &ldquot;compiler&rdquot;</b><br/>
+	Part 2: <b>A Shogun example language &ldquo;compiler&rdquo;</b><br/>
 	Once the language is designed and a proof of concept is working, the second part of the project is to create a generator for all of Shogun’s target languages. It will take a program in the Shogun language from part 1, and create the corresponding code in C++/Python/Java. We aim for a single generator which just uses a different dictionary for each target language. There also needs to be a check-mechanism that tests whether a given program is syntactically correct in the abstract Shogun language, which is probably the best way to start part 2.<br/><br/>
 
 	Part 3: <b>Translation of API-examples</b><br/>
