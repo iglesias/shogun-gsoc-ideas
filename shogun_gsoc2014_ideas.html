@@ -57,6 +57,7 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 	<li><a href="#lpqp">LP/QP Optimization Framework</a></li>
 	<li><a href="#multilabel">Large-Scale (hierarchical) Multi-Label Classification</a> </li>
 	<li><a href="#sosvm">Implement dual coordinate solver for Structured Output SVMs</a> </li>
+	<li><a href="#sosvmapprox">Structured Output Learning with Approximate Inference</a></li>
 	</ul>
 	</td>
 </tr>
@@ -373,13 +374,39 @@ References:<br/>
 	<h4 id="sosvm">Implement dual coordinate solver for Structured Output SVMs</h4>
 	<!-- Project generics -->
 	<i>Mentor: Vojtech Franc (website: http://cmp.felk.cvut.cz/~xfrancv/)</i><br/>
-	<i>Mentor: Soeren Sonnenburg (email: sonne at gmail.com, irc: sonney2k)</i><br/>
-	<i>Difficulty: <span class="difficult">Difficult</span></i><br/>
-	<i>Requirements: optimization theory, C++</i><br/>
+	<i>Shogun mentor: Soeren Sonnenburg (email: sonne at gmail.com, irc: sonney2k)</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: optimization theory, C++, basic knowledge of structured output learning</i><br/>
 	<!-- Project description -->
 	<p align="justify">
-	This task considers the implementation of a recently proposed dual coordinate solver (link will come soon; paper is under review) which uses the WSS2 strategy known from two-class LIBSVM to structured output setting. This is an opportunity to learn a lot about numeric optimization algorithms and structured output task formulations.
+	The structured output Support Vector Machines (SO-SVM) [1] is a supervised method for learning parameters of a linear classifier with possibly exponentially large number of classes. Learning is translated into a convex optimization program size of which scales with the number of classes making the problem intractable by off-the-shelf solvers.  A dual coordinate ascent (DCA) based methods, well known e.g. from two-class SVMs, have been recently proposed for solving the SO-SVM [2][3]. The DCA algorithms combine advantages of approximate online solvers and precise cutting plane methods used so far. In particular, the DCA algorithms process training example in a on-line fashion by a simple update rule and they provide a certificate of optimality at the same time.<br/><br/>
+
+	The goal of this project will be to i) implement several variants of the DCA algorithms ([2][3], others will be provided by methors), ii) integrate them smoothly to Shogun and iii) compare them with SO-SVM solvers already included in Shogun on standard benchmarks.<br/><br/>
+
+	References:<br/>
+	[1] I. Tsochantaridis, T.Joachims, T.Hoffman, Y.Altun. Large margin methods for structured and interdependent output variables. JMLR, 2005.<br/>
+	[2] P.Bamamurugan, S.K.Shevade, S.Sundararajan, and S.S.Keerthi. A sequential dual method for structural SVMs. In SIAM Conference on Data Mining. 2011.<br/>
+	[3] S.Lacoste-Julien, M.Jaggi, M.Schmidt, and P.Pletscher. Block-coordinate Frank-Wolfe optimization for structural SVMs. In proc. of ICML, 2013.
 </li>
+
+<!-- SOSVM APPROXIMATE INFERENCE IDEA -->
+<li>
+	<h4 id="sosvmapprox">Structured Output Learning with Approximate Inferences</h4>
+	<!-- Project generics -->
+	<i>Mentor: Shell Hu (email: dom343 AT gmail DOT com, irc: hushell)</i><br/>
+	<i>Shogun mentor: Thoralf Klein (email:thoralf.klein AT zib DOT de, irc: thoralf)</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br/>
+	<i>Requirements: C++, Python, probabilistic graphical models, structured output learning</i><br/>
+	<!-- Project description -->
+	<p align="justify">
+	A major challenge of structured output learning is that evaluating the loss requires solving the inference to find the highest-scoring output, which is NP-hard in general. For many tasks, this leads to a need for approximate inference. Previous research [1,2] show that a bad approximation of inference will probably result in a poor model. In this project, the student will implement 2 standard approximate inferences: linear programming (LP) and graph-cut relaxations. The second part of the project is to implement the dual loss formulation of structured output learning using LP relaxation [3]. Instead of solving computationally intensive inference per input example, the dual loss formulation turns the entire problem into a joint minimization over parameters and dual variables, which is shown to be a more efficient method for large-scale structured output learning problems. The most exciting part of the project is that we will show some cool computer vision demos, such as image denoising and image segmentation.<br/><br/>
+
+	References:<br/>
+	[1] Alex Kulesza and Fernando Pereira, Structured Learning with Approximate Inference, NIPS 2007.<br/>
+	[2] Thomas Finley and Thorsten Joachims, Training Structural SVMs when Exact Inference is Intractable, ICML 2008.<br/>
+	[3] Ofer Meshi, David Sontag, Tommi Jaakkola and Amir Globerson, Learning Efficiently with Approximate Inference via Dual Losses, ICML 2010.<br/>
+</li>
+
 </td>
 </tr>
 
