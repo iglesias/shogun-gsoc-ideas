@@ -72,6 +72,7 @@ Below is listed a set of suggestions for projects. If you have your own concrete
 	<li><a href="#cloud">Shogun cloud extensions</a></li>
 	<li><a href="#windows">Native MS Windows port</a></li>
 	<li><a href="#meta_language">A Meta-Language for Shogun Examples</a></li>
+	<li><a href="#mlpack">Lobbying Shogun in MLPACK’s automatic benchmarking system (joint project) </a></li>
 	</ul>
 	</td>
 </tr>
@@ -554,6 +555,36 @@ References:<br/>
 	This is an extremely useful project for us: we currently do not have proper examples for most target languages - even though this is one of Shogun’s coolest features. This project solves this issue in an extremely elegant way. Second, detecting differences in algorithm results among the different target languages is very tough. WIth part 4 implemented, this will be done automatically for any new example added.<br/><br/>
 
 	You will play a role in making Shogun more popular and more stable - everyone will love you! :) In addition, since you will be touching all of Shogun’s examples, you will get in contact with loads of different ML algorithms and get a very nice overview of what is possible with Shogun. In addition, you will learn about core Computer-Science from a theoretical (designing a language) and a practical (implementing parsers) type of view.
+	</p>
+</li>
+
+<!-- MLPACK IDEA -->
+<li>
+	<h4 id="mlpack">Lobbying Shogun in MLPACK’s automatic benchmarking system (joint project)</h4>
+	<!-- Project generics -->
+	<i>Mentors: Ryan Curtin and Marcus Edel (MLPACK authors), Soeren Sonnenburg (email: soeren.sonnenburg at shogun-toolbox.org, irc: sonney2k), Heiko Strathmann (email: heiko.strathmann at gmail.com, irc: HeikoS)</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: basics in Python, ML, Shogun, MLPACK, web design</i><br/>
+	<i>Useful: buildbod, advanced ML, Shogun internal, d3js</i>
+	<!-- Project description -->
+	<p align="justify">
+	Last year, at the GSoC 2013 mentor summit, we met a cool guy named Ryan, who made a great idea happen with his student Marcus: <a href="http://www.mlpack.org/benchmark.html">A cross-toolbox benchmarking system</a>. This is a website where multiple different ML toolboxes are compared to each other on various fixed datasets. Currently, the focus is on runtime and memory footprint of algorithms. The resulting summaries are very informative already. The MLPACK guys will try to push this further this year, see <a href="http://www.mlpack.org/trac/wiki/SummerOfCodeIdeas#ImprovementofautomaticbenchmarkingsystempossiblecollaborationwithShogun">their description</a>. We would like to participate in development of this project to make it even more useful. Our (Shogun-biased) vision is to:
+
+	<ul>
+		<li>Make the framework run live. Results should be updated nightly in an automated way that ensures the project stays green (i.e. doesn’t break by api changes or similar). This is very important in our view as it makes the framework maintainable for the future. We could for example add a slave in Shogun’s <a href="http://buildbot.shogun-toolbox.org/buildslaves">buildbot farm</a>.</li>
+		<li>Extend the framework to compare the quality of the results. The first step here would be to simply compare the outputs of the algorithms. The second step would be to do a toolbox independent, fair evaluation of these results (i.e. accuracy on a held out test set, or even a full cross-validation).</li>
+		<li>Have a more intuitive visualisation of the results. It would be cool to use d3js here and have some eye candy. Web-designer skills are useful here, as it would be an option to detach the current result <a href="http://www.mlpack.org/benchmark.html">website</a> from the MLPACK main page.</li>
+		<li>We want you to know a bit about ML since you will also need to write descriptions of parameters of the algorithms. Links to the implementation references for all toolboxes should be provided.</li>
+		<li>Make sure that Shogun is represented well in the results. This means that we want to make sure that a) our algorithms are used properly (sadly, it is possible to do things wrong with Shogun), and b) find out bottlenecks in cases where Shogun cannot produce results or is very slow (given similar results), and document those for us to fix.</li>
+		<li>A part of the project would also be to fix potential bottlenecks and or crashes in Shogun to rank better (with the help of other GSoC students, if interested).</li>
+		<li>Add more different algorithms to the comparison (in particular those that are in Shogun).</li>
+	</ul>
+
+	<b>Why this is cool:</b><br/>
+	Runtime is an important quality criterion, given that the results are comparable. We therefore think that it would be very useful to be able to compare results of various implementations the same algorithm. This increases the quality of the diverse ecosystem of ML toolboxes out there and is helps everyone: Users will get a useful tool to choose the from lots of packages. Developers will be pointed to potential problems in their code. In the optimal case, this gives raise to a friendly competition between different toolboxes on producing better results faster. Having daily results makes sure this neat project survives over the years and might attract other projects to participate. We could even think about integrating it to <a href="http://mloss.org/software/">MLOSS</a> and use MLOSS datasets.<br/><br/>
+
+	<b>Collaboration with MLPACK:</b><br/>
+	This project would be under the main lead of the MLPACK guys, so you would talk to them a lot, trying to identify what is needed for the above extensions. We have the idea that you will give them a helping hand in pushing the infrastructure of their project (buildbot!) about 30% of the time, spend another 30% on polishing the visualisation and presentation of the results, and spend the remaining 30% on Shogun specific things, such as polishing the used Shogun code, fix possible bugs and add new algorithms from our toolbox. Have a look at the <a href="https://github.com/zoq/benchmarks">existing code</a>.
 	</p>
 </li>
 
