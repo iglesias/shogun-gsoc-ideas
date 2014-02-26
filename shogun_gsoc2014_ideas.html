@@ -62,7 +62,8 @@ Last but not least, read thoroughly <a href="http://www.shogun-toolbox.org/page/
 	<li><a href="#cloud">Shogun cloud extensions</a></li>
 	<li><a href="#windows">Native MS Windows port</a></li>
 	<li><a href="#meta_language">A Meta-Language for Shogun Examples</a></li>
-	<li><a href="#mlpack">Lobbying Shogun in MLPACK’s automatic benchmarking system (joint project) </a></li>
+	<li><a href="#mlpack">Lobbying Shogun in MLPACK’s automatic benchmarking system (joint project)</a></li>
+	<li><a href="#binary">Shogun Binary Packages</a></li>
 	</ul>
 	</td>
 </tr>
@@ -634,6 +635,37 @@ References:<br/>
 
 	<b>Collaboration with MLPACK:</b><br/>
 	This project would be under the main lead of the MLPACK guys, so you would talk to them a lot, trying to identify what is needed for the above extensions. We have the idea that you will give them a helping hand in pushing the infrastructure of their project (buildbot!) about 30% of the time, spend another 30% on polishing the visualisation and presentation of the results, and spend the remaining 30% on Shogun specific things, such as polishing the used Shogun code, fix possible bugs and add new algorithms from our toolbox. Have a look at the <a href="https://github.com/zoq/benchmarks">existing code</a>.
+	</p>
+</li>
+
+<!-- Binary Packages Idea -->
+<li>
+	<h4 id="binary">Shogun Binary Packages</h4>
+	<!-- Project generics -->
+	<i>Mentors: Viktor Gal (email: vigsterkr at gmail.com, irc wiking), Soeren Sonnenburg (email: soeren.sonnenburg AT shogun-toolbox.org)</i><br/>
+	<i>Difficulty: <span class="medium">Medium</span></i><br/>
+	<i>Requirements: knowledge of OSX, win, linux, experience with packaging software</i><br/>
+	<i>Useful: compiling software in windows/mac (as more complicated as in linux), proper hacking skills :)</i><br/>
+	<!-- Project description -->
+	<p align="justify">
+	Sometimes, attention that Shogun gets evaporates due to the fact that people really struggle to install it. Compiling code, changing cmake settings, library paths, etc is not everyone’s thing. We therefore aim to offer an <b>easy</b> way to install Shogun on mainstream operating system via binary packaging. An easy 3-minute installation has a massive potential to increase the number of our users. In particular, we aim to automate the packaging process such that nightly binary packages are constructed by a buildslave. One big question here is how dependencies are handled: Are our binaries self contained (on which systems) or do they dynamically link against others? This will obviously depend on the target system.<br/><br/>
+
+	There are various ideas:
+	<ul>
+		<li>Have a self-contained windows installer, similar to other open-source libraries available for windows. This one should easily play with existing python/java/octave/etc distributions. The windows version first needs to compile properly.</li>
+		<li>Have a self-contained mac installer. Same as above.</li>
+		<li>Both of the above packages should be as easy to install as the debian/fedora packages.</li>
+		<li>Have a fully-self-contained linux installation that does not depend on the installed system libraries (at least not on all). This is meant to complement our existing binary packages that have certain dependencies and are meant for users that have no control over installing software on their machine but still want to use Shogun locally.</li>
+		<li>It would also be great if Shogun was part of python installation tools such as <a href="http://en.wikipedia.org/wiki/EasyInstall">easy_install</a> or pip.</li>
+		<li>Based on our docker image, we would like to have an iso-like Shogun installation that one can boot up for example on an amazon cluster so that Shogun can be used from there without further hassle.</li>
+		<li>All major modular languages should be supported effortlessly. Changing path variables etc should also be done automated.</li>
+		<li>Write proper documentation and examples how to compile and install Shogun including things like dependencies and provide commands how to install all of them.</li>
+	</ul>
+
+	There is already some preliminary work done for <a href="https://packages.debian.org/sid/science/python-shogun">Debian</a>, <a href="http://koji.fedoraproject.org/koji/packageinfo?packageID=17486">Fedora</a>, and <a href="https://index.docker.io/u/vigsterkr/shogun-python/">Docker</a>. We also have a nightly dmg build for <a href="http://buildbot.shogun-toolbox.org/builders/osx2%20-%20python">mac</a>. Your input on this project is very appreciated, let us know your ideas for spreading the Shogun word!<br/><br/>
+
+	<b>Why this is cool:</b><br/>
+	The impact of this project on Shogun’s world dominance is massive - even without any machine learning! The optimal student will be able to use his existing packaging skills and knowledge of multiple operating systems to push the number of Shogun users significantly. Apart from everyone loving you, this project also offers a wide variety of interesting technical challenges. Ask Viktor, he has lots of ideas on this.
 	</p>
 </li>
 
