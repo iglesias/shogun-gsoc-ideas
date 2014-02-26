@@ -383,12 +383,45 @@ References:<br/>
 	<h4 id="sosvmapprox">Structured Output Learning with Approximate Inferences</h4>
 	<!-- Project generics -->
 	<i>Mentor: Shell Hu (email: dom343 AT gmail DOT com, irc: hushell)</i><br/>
-	<i>Shogun mentor: Thoralf Klein (email:thoralf.klein AT zib DOT de, irc: thoralf)</i><br/>
+	<i>Shogun mentor: Thoralf Klein (email:thoralf AT fischlustig DOT de, irc: thoralf)</i><br/>
 	<i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br/>
 	<i>Requirements: C++, Python, probabilistic graphical models, structured output learning</i><br/>
 	<!-- Project description -->
 	<p align="justify">
-	A major challenge of structured output learning is that evaluating the loss requires solving the inference to find the highest-scoring output, which is NP-hard in general. For many tasks, this leads to a need for approximate inference. Previous research [1,2] show that a bad approximation of inference will probably result in a poor model. In this project, the student will implement 2 standard approximate inferences: linear programming (LP) and graph-cut relaxations. The second part of the project is to implement the dual loss formulation of structured output learning using LP relaxation [3]. Instead of solving computationally intensive inference per input example, the dual loss formulation turns the entire problem into a joint minimization over parameters and dual variables, which is shown to be a more efficient method for large-scale structured output learning problems. The most exciting part of the project is that we will show some cool computer vision demos, such as image denoising and image segmentation.<br/><br/>
+
+	A major challenge of each structured output problem is to implement an 
+	efficient "inference" method.  This method is then used in training and 
+	prediction to determines the highest-scoring/"best" output for a given input. 
+	Since the output space is usually exponential in size, we cannot evaluate all 
+	possible outputs to choose the "best" one. (Examples for such "NP hard 
+	inference problems" are graphs, where one wants to predict "outputs" for each 
+	node, while each node depends on its neighbors.)
+	<br/><br/>
+
+	Therefore Structured Output (SO) problems needs to define "efficient" 
+	inference or even approximations to the real solution.  Previous research 
+	[1,2] show that a bad approximation of inference will probably result in a 
+	poor predictor.
+	<br/><br/>
+
+	In the first part of the project, the student will implement two well-known 
+	approximation methods:  (a) linear programming (LP) and (b) graph-cut 
+	relaxations.  Both methods are known to behave well in the SO learning 
+	setting.  The task can be seen as a good entrance to machine learning, graph 
+	theory and graphical models.
+	<br/><br/>
+
+	The second part of the project is to implement the dual loss formulation of 
+	structured output learning using LP relaxation [3]. Instead of solving 
+	computationally intensive inference per input example, the dual loss 
+	formulation turns the entire problem into a joint minimization over parameters 
+	and dual variables, which is shown to be a more efficient method for large-
+	scale structured output learning problems.
+	<br/><br/>
+
+	The most exciting part of the project is that we will show some cool computer 
+	vision demos, such as image denoising and image segmentation.
+	<br/><br/>
 
 	References:<br/>
 	[1] Alex Kulesza and Fernando Pereira, Structured Learning with Approximate Inference, NIPS 2007.<br/>
