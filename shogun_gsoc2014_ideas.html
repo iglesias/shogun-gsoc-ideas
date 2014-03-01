@@ -146,7 +146,7 @@ The machine learning research community is fast-paced, and international confere
 
 A first part of the project involves the implementation of decision trees in Shogun. The C4.5 algorithm [1] is a starting point -- we are also open to suggestions. Once a method to generate a decision tree is ready, use it to provide a random forests implementation [2]. <br/><br/>
 
-A second part is k-nearest neighbours (kNN). For fast kNN search, there is a very efficient cover tree implementation in Shogun, which is however not easy to maintain and has problems in certain contexts. An additional task here is to implement another tree data structure for fast kNN, such as kd-trees [3], whose performance is somewhat comparable to the current cover tree implementation.<br/><br/>
+A second part is related to the well-known k-nearest neighbours (kNN) algorithm. For fast kNN search, we use a <a href="http://hunch.net/~jl/projects/cover_tree/cover_tree.html">very efficient cover tree implementation</a> already integrated into Shogun. kd-trees are another data structure useful to perform kNN search. This part of the project consists of implementing a kd-tree class whose performance is comparable to the cover tree which is currently available.<br/><br/>
 
 Yet another new fundamental method we want to include in Shogun is kernel density estimation [4] (also known as Parzen windows in some domains). Such an implementation must be able to leverage the many kernels available in Shogun.<br/><br/>
 
