@@ -355,9 +355,59 @@ References:<br/>
 	<i>Difficulty: <span class="medium">Medium</span></i><br/>
 	<i>Requirements: multi-label theory, structured-output learning, good c++ skills</i><br/><br/>
 	<!-- Project description -->
+
 	<p align="justify">
-	Implement models to perform large-scale (hierarchical) multi-label classification using Shogun.  This could be done using the structured-output learning framework, or by implementing custom multi-label classifiers. Dealing with multi-label outputs with 1000 or more classes per instance is not trivial in Shogun: Parts of the code base are not prepared for this and do not scale well. Thus, one major task will be optimizing of streamlining Shogun’s infrastructure for (memory-) efficient training in these settings.
+	Formally speaking, multi-label classification is about predicting sets of
+	labels for given inputs, i.e. every input can be assigned to none or many 
+	labels.  It is commonly used in text-mining and related to multi-class 
+	classification, where have a set of labels as well, but each input is only
+	assigned to *exactly* one label.
 	</p>
+
+	<p align="justify">
+	While in multi-class classification the domains of the target labels are 
+	not allowed to overlap, multi-label classification can handle these cases
+	as well.  This opens a broad range of new problem settings, but since we
+	are predicting *sets of integers* instead of integers, this yields many
+	interesting computational problems.
+	</p>
+
+	<p align="justify">
+	The first task in this project: Implement simple, but efficient approach
+	to predict multi-labels for given inputs.  The multi-label alphabet is 
+	considered to have 1000 or more labels -- enough to show the limitations
+	of naive approaches.  Solutions of this task may include parallelized 
+	training runs, exploiting the sparseness of the multi-labels and using 
+	dimension-reduction techniques like feature hashing.  (Label-classes for
+	this already exist and are just waiting for integration.)
+	</p>
+
+	<p align="justify">
+	The second task is to implement some well-known metrics for evaluating
+	multi-label predictions.  Applying the developed model on some provided
+	training data should be straightforward then.
+	</p>
+
+	<p align="justify">
+	The last (and most challenging) task task is to extend the approach to 
+	hierarchical multi-labels, often called taxonomies.  Exploiting this 
+	structure allows us to implement more efficient algorithms.  If one, for
+	example, requires that a label can only be set if the parent-label is
+	set as well, then this allows us to to lazily predict the structure.
+	This would save a lot of computing power, but requires to implement an
+	efficient decoding (dynamic programming, adapting the forward-backward
+	algorithm, also known as Viterbi decoding or belief propagation).
+	</p>
+
+	<p align="justify">
+	Finally it can be stated, that the focus of this project is less about
+	researching multi-label classification, but to implement memory- and 
+	time-efficient algorithms that scale well on growing problems.  There is
+	already a lot of research done in this field.  This project allows the
+	participant to adjust the focus between algorithms, sophisticated models,
+	optimizing infrastructure, or efficient data structures.
+	</p>
+	
 </li>
 
 <!-- SOSVM PROJECT IDEA -->
