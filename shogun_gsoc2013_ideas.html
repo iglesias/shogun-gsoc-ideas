@@ -1,0 +1,246 @@
+<p>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>shogun | A Large Scale Machine Learning Toolbox</title>
+<meta name="ROBOTS" content="ALL" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="Copyright" content="This site's design and contents Copyright (c) 2007-2012  Soeren Sonnenburg" />
+<meta name="keywords" content="large scale, machine learning, open source" />
+<meta name="description" content="SHOGUN Large Scale Machine Learning Toolbox" />
+<link href="media/css/base.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</p>
+<table class="ideas" style="width: 99%;" align="center">
+<tbody>
+<tr>
+<td>
+<table>
+<tbody>
+<tr>
+<td><img src="../../../../static/figures/shogun_logo.png" border="0" alt="SHOGUN Logo" width="50" /></td>
+<td>
+<h1>Ideas for Google Summer of Code 2013 Projects</h1>
+Shogun toolbox is a software library for machine learning algorithms, with a special focus on large-scale applications. During Summer      of Code 2013 we are looking to extend the library in the following ways:  	    
+<ul>
+<li>Improving accessibility to shogun by developing improving i/o support (more file formats),              machine learning demos, and mloss.org/mldata.org integration.</li>
+<li>Integration of existing and new machine algorithms.</li>
+</ul>
+Below is listed a set of suggestions for projects. If you have your own concrete idea or want to solve a task from 2011 or 2012 - talk to us! We might be interested.<br /><br /> <i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2011_ideas.html">GSoC 2011 ideas</a></i><br /> <i><a href="http://www.shogun-toolbox.org/page/Events/gsoc2012_ideas.html">GSoC 2012 ideas</a></i> <br /><br /> <i><a href="http://www.shogun-toolbox.org">back to shogun toolbox homepage</a></i></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<h2>Table of Contents</h2>
+</td>
+</tr>
+<tr>
+<td class="ideas1" width="100%">
+<h4>Improving accessibility to shogun</h4>
+<ul>
+<li><a href="#mldata">mloss.org and mldata.org integration</a> </li>
+<li><a href="#demos">Develop interactive machine learning demos</a> </li>
+<li><a href="#fastio">Fast Reading and writing of shogun features / objects in standard file formats (ascii/libsvm/pytables/matlab 7.0/matlab 7.X/octave 3.x/h5py/arff) format</a> </li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="ideas2" width="100%">
+<h4>Machine learning tasks</h4>
+<ul>
+<li><a href="#qp">Interface and develop the general quadratic solver library libqp</a> </li>
+<li><a href="#bss">Implement algorithms for Blind Source Separation (BSS) and Independent Component Analysis (ICA) based on Approximate Joint Diagonalization (AJD) of matrices</a> </li>
+<li><a href="#hash">Large Scale Learning &amp; Dimension reduction using hashing</a> </li>
+<li><a href="#fastfood">Large Scale Learning: loglinear time kernel expansion (aka Fast Food)</a> </li>
+<li><a href="#so">Large-scale learning of general structured output models</a> </li>
+<li><a href="#metric">Implement metric learning algorithms with applications to metagenomics</a> </li>
+<li><a href="#robust">Implement robust classification methods</a> </li>
+<li><a href="#mil">Implement multiple instance learning algorithms</a> </li>
+<li><a href="#dimred">Improve dimensionality reduction module</a> </li>
+<li><a href="#densities">Implement estimators of large-scale sparse Gaussian densities</a> </li>
+<li><a href="#gp">Gaussian Processes for Classification</a> </li>
+</ul>
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>
+<h2>List of Ideas</h2>
+</td>
+</tr>
+<tr>
+<td class="ideas1">
+<h2>Improving accessibility to shogun</h2>
+<ul>
+<li>
+<h4 id="mldata"><a href="http://mloss.org">mloss.org</a> and <a href="http://mldata.org">mldata.org</a> integration</h4>
+<i>Mentor: <a href="http://www.ong-home.my/">Cheng Soon Ong</a></i><br /> <i>Difficulty: <span class="medium">Medium<span></span></span></i><br /> <i>Requirements: C++ programming, python, (optional django)</i><br /><br /> The machine learning data set repository <a href="http://mldata.org">mldata.org</a> provides data and task         downloads in a standardized format. Make shogun to natively be able to         read these data formats and interact with the mldata.org website, i.e., by             
+<ul>
+<li>read and write support for the hdf5 based data sets and tasks (see <a href="http://mldata.org/about/hdf5/">http://mldata.org/about/hdf5/</a>)</li>
+<li>contribute features to mldata.org for command-line based up/downloading of data,task,methods,solutions</li>
+<li>contribute features to mloss.org for command-line based up/downloading of methods and other community features</li>
+</ul>
+Note that the optional part of this task aims to help the machine learning community portals for          which python and <a href="http://www.djangoproject.com/">django</a> skills are needed (both portal website's source code are also open source). </li>
+<li>
+<h4 id="demos">Develop interactive machine learning demos</h4>
+<i>Mentor: <a href="http://sonnenburgs.de/soeren">Soeren Sonnenburg</a></i><br /> <i>Difficulty: <span class="easy">Easy</span> to <span class="difficult">difficult<span></span></span></i><br /> <i>Requirements: python, django, javascript, d3.js, interest in machine learning</i><br /><br /> This likely is the most interesting task if you are not yet familiar with machine learning but very interested in learning    what it is and what it can do. The end result will be some visually pleasing examples that demonstrate how key machine    learning tasks can be solved with shogun, like regression, binary and multiclass classification, clustering, dimension reduction etc.        
+<ul>
+<li> To get started - have a look at some of the (graphical;interactive) python_modular examples. </li>
+<li> Write a d3js based javascript showing a 2D grid where clicking left mouse button stores the coordinates of points. </li>
+<li> Write a python / django based solution to solve a simple binary classification problem utilizing 2) and 1).. </li>
+<li> Implement a digit recognizer as in http://shogun-toolbox.org/static/media/ocr.swf but with d3js/django. </li>
+<li> Implement generic multiclass &amp; regression &amp; clustering demos based on 2) </li>
+<li> Implement dimension reduction demo. </li>
+<li> Implement a web frontend for state-of-the-art detectors from bioinformatics to detect starts of human           genes and splice sites utilizing code in applications/asp and arts. </li>
+</ul>
+</li>
+<li>
+<h4 id="fastio">Fast Reading and writing of shogun features / objects in standard file formats (ascii/libsvm/pytables/matlab 7.0/matlab 7.X/octave 3.x/h5py/arff) format</h4>
+<i>Mentor: <a href="http://sonnenburgs.de/soeren">Soeren Sonnenburg</a></i><br /> <i>Difficulty: <span class="easy">Easy</span> to <span class="medium">Medium<span></span></span></i><br /> <i>Requirements: C++ programming</i><br /><br /> Shogun already supports file i/o in various data formats. The task would be to streamline file operations implementing    and improving existing  loading and writing routines to load/save basic shogun data types. A subset of the following is to be solved:        
+<ul>
+<li>Improve ascii loading / writing routines (improve speed and code quality).          Develop ascii readers for basic ascii formats (csv, libsvm,arff) for basic shogun          data types like SGVector, SGMatrix, SGSparseMatrix, SGStringList. </li>
+<li>In a next step a protobuf based fast binary file format including readers and writers          should be developed (we will provide the .proto files). Depending on available time          additional tasks below are attacked </li>
+<li>Implement the hierarchical data format version 5 (contained in CHDF5File) will be          extended. The task would be to extend hdf5 support by implementing             
+<ul>
+<li>variable length data types support </li>
+<li>symbolic links </li>
+<li>compression support </li>
+<li>slicing support </li>
+<li>attribute support         Extensive information about hdf5 can be found in its reference manual. </li>
+<li>Develop matlab 7 file format reader: Matlab 7 file format specifications are publicly          available online. In addtion Octave has support for reading files up to version 7.2.          The task is to develop a file i/o class based on these specifications that allows for          reading and writing .mat files directly. Note that one can borrow a lot of code          from octave here (see the files src/ls-mat4.cc and load-save.cc). </li>
+<li>Natively support loading and writing of octave files. One can make use of the already implemented          functionality in octave (files ls-oct-ascii.{cc,h} and ls-oct-binary.{cc,h}. So this          task involves a lot of code borrowing. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="ideas2">
+<h2>Machine learning tasks</h2>
+<li>
+<h4 id="qp">Interface and develop the general quadratic solver library libqp</h4>
+<i>Mentor: <a href="http://cmp.felk.cvut.cz/~xfrancv/">Vojtech Franc</a></i><br /> <i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult<span></span></span></i><br /> <i>Requirements: Some background in optimization, programming in C++</i><br /><br />
+<p><a href="http://cmp.felk.cvut.cz/~xfrancv/libqp/html/">libqp</a> is a C library which implements algorithms      for solving two instances of convex Quadratic Programming (QP) frequently used      in Machine Learning (see <a href="http://cmp.felk.cvut.cz/~xfrancv/libqp/html/">this link</a> for more details).      libqp uses a variant of the sequential minimal optimization algorithm able to solve very-large QP problems      where the Hessian does not fit to computer memory. The task would be to make this library accessible from      within the shogun framework by interfacing it via the modular interfaces and to extend libqp by implementing solvers      for new QP problems and by integrating some existing solvers (like pr_loqo) already in shogun.</p>
+Tasks (in parallel to interfacing libqp to shogun):<br /> 
+<ul>
+<li>Get familiar with Shogun. </li>
+<li>Implement sequential minimal solver with 2nd order working set selection for the standard SVM dual QP problem [1][2]. </li>
+<li>Implement sequential minimal solver for the QP problem with box constraints [3]. </li>
+<li>Integrate pr_logo solver to libqp. </li>
+<li>Create a set of benchmark problems and use them to compare libqp solvers with a commercial package like Mosek [4]. </li>
+</ul>
+References:<br /> [1] V. Franc. <a href="ftp://cmp.felk.cvut.cz/pub/cmp/articles/franc/Franc-PhD05.pdf">Optimization Algorithms for Kernel Methods.</a> PhD thesis, CMP, FEE CTU Prague. Defended in November 2005.<br /> [2] R.-E. Fan, P.-H. Chen, C.-J. Lin.  <a href="http://jmlr.csail.mit.edu/papers/volume6/fan05a/fan05a.pdf">Working Set Selection Using Second Order Information for Training SVM</a>. JMLR. vol 6. 2005.<br /> [3] V. Franc, M.Navara, V.Hlavac. <a href="ftp://cmp.felk.cvut.cz/pub/cmp/articles/franc/Franc-Hlavac-Navara-CAIP05.pdf">Sequential Coordinate-Wise Algorithm for the Non-negative Least Squares Problem</a>. CAIP2005.<br /> [4] <a href="http://www.mosek.com/">MOSEK</a>.</li>
+<li>
+<h4 id="bss">Implement algorithms for Blind Source Separation (BSS) and Independent Component Analysis (ICA) based on Approximate Joint Diagonalization (AJD) of matrices</h4>
+<i>Mentor: <a href="mailto:andreas &lt;DOT&gt; ziehe &lt;AT&gt; tu-berlin &lt;DOT&gt; de">Andreas Ziehe</a></i><br /> <i>Shogun co-mentor: <a href="mailto:lisitsyn.s.o@gmail.com">Sergey Lisitsyn</a></i><br /> <i>Difficulty: <span class="medium">Medium</span></i><br /> <i>Requirements: C++, numerical linear algebra, optimization (Matlab, R)</i><br /><br /> This task is about implementing state-of-the-art algorithms for Blind Source Separation (BSS)   and Independent Component Analysis (ICA) to complement the SHOGUN toolbox.  ICA is a powerful technique that can    be used as a pre-processing, feature extraction and visualization method in many machine learning problems. As it is well    known,  ICA/BSS can be done via the approximate joint diagonalization (AJD) of matrices [1]. Thus we propose to implement   efficient algorithms for AJD as a main building block for SHOGUN. Possible candidates are the algorithms JADE,    FFDIAG [2], JADIAG, JEDI and UWEDGE [3]. Furthermore efficient methods to compute the matrices to be diagonalized    (i.e. lagged correlation matrices, matrices from 4th order cumulant slices, ...) are needed as well.    There exists a reference package containing some implementations (in R)[4]. This idea offers an opportunity to dive    into the intersection of machine learning, statistics and digital signal processing and gives a chance to    highly improve scientific programming skills.<br /><br /> References:<br /> [1] Handbook of Blind Source Separation <a href="http://books.google.de/books?id=PTbj03bYH6kC">http://books.google.de/books?id=PTbj03bYH6kC</a><br /> [2] A. Ziehe, P. Laskov, G. Nolte and K.-R. Mueller; A Fast Algorithm for Joint Diagonalization with Non-orthogonal Transformations and its Application to Blind Source Separation; Journal of Machine Learning Research (JMLR), vol 5, pages 777-800, 2004<br /> [3] Tichavsky, P. &amp; Yeredor, A.; Fast Approximate Joint Diagonalization Incorporating Weight Matrices; IEEE Trans. Signal  Process., 2009, 57, 878-891<br /> [4] JointDiag R package <a href="http://cran.r-project.org/web/packages/jointDiag">http://cran.r-project.org/web/packages/jointDiag</a></li>
+<li>
+<h4 id="hash">Large Scale Learning &amp; Dimension reduction using hashing</h4>
+<i>Mentor: <a href="http://olivier.chapelle.cc/">Olivier Chapelle</a>, Benoit Rostykus</i><br /> <i>Shogun co-mentor: <a href="http://sonnenburgs.de/soeren">Soeren Sonnenburg</a></i><br /> <i>Difficulty: <span class="medium">Medium</span></i><br /> <i>Requirements: C++, basic machine learning</i><br /><br /> The so-called "hashing trick", made popular by the Vowpal Wabbit learning software, is a    very convenient method to reduce the dimensionality of sparse high dimensional data derived from    categorical data or bag of words representations. A naive way to implement it is to pre-hash all    the tokens and their derived features and to use standard linear algorithms in the new representation.    But it is often more efficient to compute the hashed features on the fly. For instance, in the case of    quadratic features, it would require O(d^2) storage to explicitly represent an example with d token. But    like in the case of the kernel trick, we do not need to explicitly compute that representation.   The goal of this project is to implement this implicit representation in Shogun.    As in Vowpal Wabbit, this can be applied to categorical features, quadratic features,    n-grams, structured output-learning, and potentially other uses cases. <br /> This project offers a great opportunity to learn essentials of large scale learning systems that are of high demand nowadays.    Subtasks would be:       
+<ul>
+<li>Get familiar with shogun, in particular CHash, CDotFeatures. </li>
+<li>Write a tokenizer that splits up a text document into hashes of words, hashed n-grams. </li>
+<li>Write a simple text category classifier (e.g. spam filter) based on 2. </li>
+<li>Implement CHashedNGramDotFeatures for on-the-fly hashing and verify results by comparing to 3) </li>
+<li>Implement hashing for categorial and quadratic features. </li>
+</ul>
+</li>
+<li>
+<h4 id="fastfood">Large Scale Learning: loglinear time kernel expansion (aka Fast Food)</h4>
+<i>Mentor: <a href="http://cs.stanford.edu/~quocle/">Quoc V. Le</a></i><br /> <i>Shogun co-mentor: <a href="http://sonnenburgs.de/soeren">Soeren Sonnenburg</a></i><br /> <i>Difficulty: <span class="medium">Medium</span></i><br /> <i>Requirements: C++, machine learning</i><br /><br /> Background: Large scale learning with kernels is hindered by the fact that kernel classifiers    require computing kernel expansions of the form \( f(x)=\sum_{i=1}^N \alpha_i K(x,x_i) \). Obviously, the more    non-zero coefficients \( \alpha_i \) there are the slower the kernel machine. Recently, progress has been made    in drastically speeding up kernel machines by approximating the kernel feature space [1][2][3].        
+<ul>
+<li> Familiarize yourself with [1]-[3] and shogun (in particular CKernelMachine and CDotFeatures). </li>
+<li> Implement random fourier features [1] via C DotFeatures and compare to results on an example to shogun/preprocessor/RandomFourierGaussPreproc.cpp. </li>
+<li> Familiarize with [2] &amp; [3] and implement them. </li>
+<li> Implement a speed comparison of [1]-[3]. </li>
+</ul>
+References:<br /> [1] Efficient Additive Kernels via Explicit Feature Maps (Vedaldi, 2011)<br /> [2] Random kitchen sinks <a href="https://research.microsoft.com/apps/video/dl.aspx?id=103390&amp;l=i">https://research.microsoft.com/apps/video/dl.aspx?id=103390&amp;l=i</a><br /> [3] Fast Food <a href="http://videolectures.net/nipsworkshops2012_smola_kernel/">http://videolectures.net/nipsworkshops2012_smola_kernel</a> </li>
+<li>
+<h4 id="so">Large-scale learning of general structured output models</h4>
+<i>Mentor: <a href="mailto:pat@pletscher.org">Patrick Pletscher</a></i><br /> <i>Shogun co-mentor: <a href="http://sonnenburgs.de/soeren">Soeren Sonnenburg</a></i><br /> <i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br /> <i>Requirements: C++, Python (to produce usability examples and read existing code), machine learning theory (specially structured output learning)</i><br /> <i>Desired: Optimization, knowledge of Shogun&rsquo;s structured output framework.</i><br /><br /> This project focuses on extending the structured output (SO) learning framework in Shogun. We will    consider two aspects: First, we would like to support general structured output applications, such    as background-foreground segmentation in computer vision or part-of-speech tagging in natural language    processing. Second, we would like to improve the Shogun SO learning framework to handle large-scale    structured data by means of efficient online solvers. These two aspects are described in more detail below.<br /><br /> Parameter learning of general structured output models using structured SVMs. Using the current SO framework    in Shogun, this entails extending the class StructuredModel and implementing the application dependent parts,   namely the joint feature vector function, the MAP inference and the structured loss. Most of the work in this    part is probably devoted to the (loss-augmented) inference problem. A couple of methods could be implemented for    this, e.g. linear programming relaxations and/or graph cuts. In addition, in order to support general structured    output domains, a new class of Features and StructuredLabels is likely to be needed.<br /><br /> Large-scale structured SVM learning. Shogun currently only supports learning the structured SVM using    the BMRM and cutting planes algorithms. Both of these methods are batch solvers (i.e., one update step    after going through the whole dataset once) and do not perform very efficiently for large-scale applications. We would    like to improve the speed of training structured SVMs by implementing two online learning approaches: standard stochastic gradient descent    and the recent block coordinate Frank-Wolfe solver introduced in [Lacoste-Julien, Jaggi, Schmidt and Pletscher; 2013].    Furthermore, large-scale applications are likely to substantially profit from the Coffin approach [Sonnenburg, Franc; 2010] which is    already implemented in Shogun for training standard binary SVMs, hence we would like to extend Coffin to the structured SVM.<br /><br />While the programming difficulty for this project is not high, basic understanding of machine learning and optimization    is mandatory. This renders the whole project difficult. </li>
+<li>
+<h4 id="metric">Implement metric learning algorithms with applications to metagenomics</h4>
+<i>Mentor: <a href="mailto:georg.zeller@gmail.com">Georg Zeller</a></i><br /> <i>Shogun co-mentor: <a href="mailto:lisitsyn.s.o@gmail.com">Sergey Lisitsyn</a></i><br /> <i>Difficulty: <span class="medium">Medium</span> to <span class="difficult">Difficult</span></i><br /> <i>Requirements: C++, optimization, machine learning</i><br /><br /> The goal of this project would be to implement widely used distance metric learning methods in SHOGUN.    Most importantly, the large-margin nearest neighbor (LM-NN) approach by Kilian Weinberger and colleagues [1,2].    The idea is to learn a transformation of the Euclidean space such that the accuracy of the k-nearest neighbor (kNN)    classifier is maximized. This leads to a semi-definite convex optimization problem. Although not as scalable as e.g.    linear SVMs, the LM-NN approach can handle multiclass problems with ~200 features and &gt;50,000 training examples.    Applications for these distance learning approaches could come from many domains, but metagenomics -- a recently founded, fast-paced   field in the interface between molecular biology, computational biology and microbial ecology -- would be an    ideal choice, because a typical data analysis heavily relies on distance-based clustering and low-rank    projections such as PCA and PCoA.<br /> This idea offers an outstanding opportunity to help metagenomics researchers with providing implementation of LM-NN algorithm to    the community. The mentor of this project is an active researcher working in metagenomics which means the student    can learn a lot on scientific programming and data analysis (and maybe even help    with on-going research tasks to give implementations a try).<br /><br /> References:<br /> [1] Distance Metric Learning for Large Margin Nearest Neighbor Classification, by Weinberger &amp; Saul, JMLR 2009<br /> [2] Large Margin Multi-Task Metric Learning by Parameswaran &amp; Weinberger NIPS 2010 </li>
+<li>
+<h4 id="robust">Implement robust classification methods</h4>
+<i>Mentor: <a href="mailto:chengsoon.ong@unimelb.edu.au">Cheng Soon Ong</a></i><br /> <i>Shogun co-mentor: <a href="mailto:lisitsyn.s.o@gmail.com">Sergey Lisitsyn</a></i><br /> <i>Difficulty: <span class="medium">Medium</span></i><br /> <i>Requirements: Some background in optimization, programming in C++</i><br /><br /> There are several recent approaches to learning with uncertain data,   including robust classification and regression. Instead of the standard   supervised learning setting with one example-label pair, uncertain data   has an uncertainty region around each example. This results in second   order cone programming (SOCP) problems, which can be solved using standard   solvers such as MOSEK or CPLEX.    Tasks include:        
+<ul>
+<li>Get familiar with Shogun, and its interface to standard convex   optimisation solvers. </li>
+<li>Implement Robust SVM for classification [1], including SOCP interface. </li>
+<li>Collect uncertain datasets, and upload to mldata.org </li>
+<li>Implement container to store uncertain data </li>
+<li>Implement Robust minimax classifier [2] </li>
+<li>Implement Robust regression [1] </li>
+</ul>
+References:<br /> [1] Shivaswamy, Bhattaracharya, Smola, "Second Order Cone Programming   Approaches for Handling Missing and Uncertain Data", JMLR 7 (2006),   1283&shy;1314<br /> [2] Lanckriet, El Ghaoui, Bhattacharyya, Jordan, "A Robust Minimax   Approach to Classification", JMLR 3 (2002) 555-582 </li>
+<li>
+<h4 id="mil">Implement multiple instance learning algorithmss</h4>
+<i>Mentor: <a href="mailto:chengsoon.ong@unimelb.edu.au">Cheng Soon Ong</a></i><br /> <i>Shogun co-mentor: <a href="mailto:lisitsyn.s.o@gmail.com">Sergey Lisitsyn</a></i><br /> <i>Difficulty: <span class="medium">Medium</span></i><br /> <i>Requirements: Some background in optimization, programming in C++</i><br /><br /> In many applications of supervised learning, the cost of obtaining ground   truth labels is a significant bottleneck. This has led to research on   weakly labeled data, among which the framework of multiple instance   learning (MIL) has shown promising results. This project aims to extend   shogun to enable MIL by implementing several algorithms.    Tasks include:       
+<ul>
+<li>Get familiar with shogun, in particular representation of examples and labels. </li>
+<li>Implement mi-SVM and MI-SVM [1] </li>
+<li>Implement container to store MIL bags and instances </li>
+<li>Collect MIL datasets, and upload to mldata.org </li>
+<li>Compare results of mi-SVM and MI-SVM with the matlab implementation of deterministic annealing [2] </li>
+<li>Implement eMIL [3], using interfaces to MOSEK or CPLEX for solving SOCP. </li>
+</ul>
+References:<br /> [1] Andrews, Tsochantaridis, Hofmann, Support vector machines for multiple-instance learning. NIPS, 2002.<br /> [2] Gehler, Chapelle, Deterministic annealing for multiple-instance learning. AISTATS, 2007.<br /> [3] Krummenacher, Ong, Buhmann, Ellipsoidal Multiple Instance Learning, ICML 2013. </li>
+<li>
+<h4 id="dimred">Improve dimensionality reduction module</h4>
+<i>Mentor: <a href="mailto:lisitsyn.s.o@gmail.com">Sergey Lisitsyn</a></i><br /> <i>Difficulty: <span class="medium">Medium</span></i><br /> <i>Requirements: C++, Eigen3, numerical linear algebra, data structures</i><br /><br /> Dimension reduction is the process of finding low-dimensional representations which is especially useful    for visualization and compressing redundant data. It is worth to note that dimension reduction    can be considered as a mature field as it has been under heavy development for decades already. Nevertheless,    we believe machine learning community lacks flexible and efficient open-source    implementations of developed algorithms. <br /> During the summer the student will be improving dimensionality reduction module of the Shogun toolbox    and possible tasks for this idea that can be done by the student include:        
+<ul>
+<li>Design and implement an adapter for FEAST eigensolver (<a href="http://www.ecs.umass.edu/~polizzi/feast/">http://www.ecs.umass.edu/~polizzi/feast</a>). </li>
+<li>Integrate a balltree (or any other fast metric tree except already available covertree, suggestions are welcome) construction algorithm. </li>
+<li>Implement a few more simple algorithms (e.g. Sammon mapping and non-metric Multidimensional scaling) with proper testing. </li>
+<li>Increase test coverage of dimension reduction algorithms. </li>
+<li>Design some graphical examples of dimension reduction algorithms. </li>
+<li>Improve documentation (including writing down methods          descriptions to <a href="https://github.com/shogun-toolbox/shogun-tutorial">https://github.com/shogun-toolbox/shogun-tutorial</a>). </li>
+</ul>
+This project offers a great opportunity to get familiar with dimension reduction and    scientific programming. As all dimension reduction code in Shogun uses capabilities of modern C++ (template    Eigen3 library, OpenMP parallelization, ...), the idea also gives an opportunity to    develop programming skills through real practice. </li>
+<li>
+<h4 id="densities">Implement estimators of large-scale sparse Gaussian densities</h4>
+<i>Mentor: <a href="mailto:heiko.strathmann@gmail.com">Heiko Strathmann</a>, Erlend Aune, Daniel Simpson</i><br /> <i>Difficulty: <span class="difficult">Difficult</span></i><br /> <i>Requirements: C++, (sparse) numerical linear algebra (positive definiteness, trace,       Cholesky decomposition, Eigenvalues, iterative methods for linear systems (conjugate gradients),       preconditioning), Basic probability theory: (Gaussian distributions and manipulating them, expected       value and variance), Graph colourings</i><br /> <i>Useful: Eigen3,  Bayesian statistics, MCMC knowledge (Metropolis-Hastings algorithm), LaTeX (for shogun-tutorial documentation), MATLAB (to read existing code)</i><br /><br /> Gaussian distributions are a key tool in a vast number of applications from computational statistics and machine learning. Applications    include for example dimension reduction such as factor analysis, the non-parametric Gaussian processes for regression or    classification, and time-series models such as the Kalman filter (see [3]). We consider a subclass of Gaussian    distributions whose covariance matrix is sparse and very large. Evaluating those    distributions (in the log-domain) requires to compute the log-determinant    of the covariance matrix. This is usually done via taking a matrix factorisation such as the Cholesky    and then using the diagonal entries. However, Cholesky factors of sparse matrices usually are not sparse themselves.    From a certain size on (few hundred thousands to millions), this makes computing the log-determinant infeasible due to computer memory constraints.<br /> This project aims at implementing statistical estimators for log-determinants of positive definite matrices, whose empirical    mean converges to the true value and which are feasible to compute on desktop computers. We plan to take an approach that is described in [1].<br /><br /> 
+<ul>
+<li>This involves rewriting the log-determinant in terms of the trace of a matrix logarithm function </li>
+<li>The trace of large matrices can be estimated using a simple Monte Carlo approach (see [1] and references therein) </li>
+<li>Since the above estimator has a large variance, we need to follow an approach suggested in [1], which involves          sampling the trace using so-called probing vectors, which are generated using greedy colorings of sparse graphs          that correspond to the covariance matrix. An efficient algorithm for producing those          has to be implemented or taken from an external library. </li>
+<li>The matrix logarithm can be approximated (up to arbitrary precision) using a contour integral. This involves          solving multiple linear systems. See [1, 6] and references. Iterative methods which only rely on          matrix-vector products are the key here, see for example [4] and [2]. In addition, it requires to          compute Eigenvalues of the matrix in an iterative way. </li>
+<li>The matrix logarithm also requires computation of complex integration weights [see 6] for which certain functions          for complex arithmetics have to be implemented. These involve elliptic curve functions on complex          numbers. Existing C/Matlab code has to be integrated to compute these. </li>
+<li>When working with large-scale matrices, things tend to break (no/slow convergence, out of memory). That is          why we will apply preconditioning methods (see [5]) for solving linear systems. </li>
+</ul>
+We have working MATLAB implementations of the full procedure. In addition, there is an open-source library called    KRYLSTAT of which we might import certain parts (we are in contact with the authors). While *basic* understanding of    the involved concepts is crucial, it is not required that you understand all methods in detail yet. We    will provide a detailed description of all involved algorithms along with working implementations and help you on the    way. We plan to make use of Eigen3 for sparse linear algebra operations. However, it may be necessary at some point    to re-implement an existing solver ourselves.   We aim for a modular framework where all methods can be run separately from each other. That allows to incrementally develop needed tools    step-by-step. Writing test cases to ensure that individual modules do what they should is essential -- as is writing documentation and    meaningful examples is essential. We also expect you to extend the shogun-tutorial.<br /> The project offers a great opportunity to get your hands dirty on a large number of topics used in computational    statistics and many other contexts. Using unbiased estimators for likelihood functions is a very hot topic    in statistics - people will be very keen in having this implemented for large Gaussians and it    is likely that this code will be used.<br /><br /> References:<br /><br /> [1] Erlend Aune, Daniel Simpson and Jo Eidsvik, Parameter estimation in high dimensional Gaussian distributions, Preprint in Statistics, No. 5/2012, NTNU, 2012<br /> [2] &ldquo;Painless Conjugate Gradient&rdquo; and related concepts:        <a href="http://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf">http://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf</a><br /> [3] <a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">wiki:Multivariate normal distribution</a><br /> [4] <a href="https://en.wikipedia.org/wiki/Conjugate_gradient_method">wiki:Conjugate gradient method</a><br /> [5] <a href="https://en.wikipedia.org/wiki/Preconditioning">wiki:Preconditioning</a><br /> [6] Hale, N., Higham, N. J., &amp; Trefethen, L. N. (2008). Computing \( A^{\alpha} \), \( \log(A) \), and related matrix        functions by contour integrals. SIAM Journal on Numerical Analysis, 46(5), 2505&ndash;2523. </li>
+<li>
+<h4 id="gp">Gaussian Processes for Classification</h4>
+<i>Mentor: <a href="mailto:heiko.strathmann@gmail.com">Heiko Strathmann</a>, Oliver Stegle</i><br /> <i>Difficulty: <span class="medium">Medium</span></i><br /> <i>Requirements: C++, Gaussian Process basics, Bayesian Inference</i><br /> <i>Useful: GPML-toolbox, Eigen3, LaTeX (for shogun-tutorial documentation)</i><br /><br /> In last year&rsquo;s GSoC, Jacob Walker implemented a flexible framework for Gaussian process regression models. This project build upon this    initial work and is about extending the existing infrastructure to allow classification with GPs. The aims are        
+<ul>
+<li>To implement binary classification based on the classical logit-based likelihood (optional: other likelihoods) </li>
+<li>For inference, there exists code for the Laplace approximation (for sparse student-t-likelihood based regression).          The code should be used/extended to implement inference for the above binary classification. Section 3.4 in [1] </li>
+<li>Another popular inference method for binary classification is the expectation propagation method (Section 3.6 in [1]).          It is numerically slightly more challenging than the Laplace approximation and therefore has to be implemented carefully </li>
+<li>Hyperparameters are fully handled by GPs. Existing methods for model-selection should be extended for the          classification context. In particular ML2 via gradient descent on the marginal likelihood and LOO bounds for          X-validation. See Chapter 5 in [1]. If there is time left at the end, we might try a fully          Bayesian approach on the hyperparameters. See [2] </li>
+<li>Multiclass classification is also possible with GPs via some fairly straightforward extensions, which are to be          added to the existing framework. Section 3.5 in [1]. Including Laplace approximation and EP. </li>
+<li>Optional: sparse methods (relevance vector machines, see [3]) </li>
+<li>The first task of the project is to write a full unit-test suite for all modules of the existing code. This will ensure          that they do what they should and also you will get involved how the GP framework in shogun works (this is non-trivial due          to the connections with the parameter framework) </li>
+<li>Another larger part of time should be spent on polishing/extending the existing GP examples          to illustrate usage in a more illustrative way. In addition, new examples are to be written to          illustrate classification. We want nice pictures including heatmaps of          the predictive distributions. [1] Contains some  nice examples to reproduce. </li>
+<li>Documentation of the full framework (including existing regression models) for the shogun-tutorial          in LaTeX is necessary (with examples/pictures/general framework etc) </li>
+</ul>
+If you have more suggestions, let us know!<br /> This project offers the opportunity to get in touch with the concept of GPs from an implementation side of    view. Apart from SVM, GPs are among the most widely used tools for classification. As the GPML toolbox    coming with [1] has no implementation of multiclass GPs, you can expect that your code will    be used by the community. The project is quite flexible in terms of how much can be done and offers    a lot of room for sophisticated extensions while the basic tasks are not too hard. You can play    a lot with these things (and we expect you to). Should be quite fun!<br /><br /> References:<br /> [1] Rasmussen, C. E., &amp; Williams, C. K. I. (2006). Gaussian Processes in Machine Learning. MIT Press.<br /> [2] Williams, C. K. I., &amp; Barber, D. (1998). Bayesian classification with Gaussian processes.        IEEE Transactions on Pattern Analysis and Machine Intelligence, 20(12), 1342&ndash;1351.<br /> [3] Sparse Bayesian Learning and the Relevance Vector Machine Michael E. Tipping, JMLR 2001.        <a href="http://jmlr.csail.mit.edu/papers/v1/tipping01a.html">http://jmlr.csail.mit.edu/papers/v1/tipping01a.html</a> </li>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+<script type="text/javascript"><!--
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+// --></script>
+<script type="text/javascript"><!--
+	var pageTracker = _gat._getTracker("UA-4138452-1");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+// --></script>
+</p>
